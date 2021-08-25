@@ -1,0 +1,43 @@
+## RubyName
+Ruby[X]
+
+## RubyDesc
+An adventurous noble from SOMEWHERE[NL]
+Stubborn, with a sunny disposition.[X]
+
+## ArlaName
+Arla[X]
+
+## ArlaDesc
+Arla Desc[X]
+
+## RomiName
+Romina[X]
+
+## RomiDesc
+Test Romi Desc[X]
+
+## EllaName
+Ella[X]
+
+## EllaDesc
+Took a job chaperoning a noble and[NL]
+regretted it. Loves peaches.[X]
+
+## UrsulaName
+Ursula[X]
+
+## UrsulaDesc
+Ursula Desc[X]
+
+## RainerName
+Rainer[X]
+
+## RainerDesc
+Rainer Desc[X]
+
+## KilvonsoName ^
+Von Kilvonso[X]
+
+## KilvonsoDesc
+Kilvonso Desc[X]

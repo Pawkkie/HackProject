@@ -1,0 +1,2 @@
+Explorer: All traversable[NL]
+terrain costs 1 movement.[X]

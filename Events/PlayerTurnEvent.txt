@@ -1,0 +1,4 @@
+//TurnEventPlayer(0x9,StartOfTurnSave,2,255)
+//StartOfTurnSave:
+//ASMC 0x80B5D5D
+//ENDA

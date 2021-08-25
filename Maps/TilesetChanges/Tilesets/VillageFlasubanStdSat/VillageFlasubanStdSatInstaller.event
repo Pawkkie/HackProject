@@ -1,0 +1,20 @@
+// Flasubans Standard, Saturated Village
+ALIGN 4
+Village1Objects:
+#incext Png2Dmp "village1.png" --lz77
+
+ALIGN 4
+Village1Palette:
+#incext Png2Dmp "GoodPal.png" --palette-only
+
+ALIGN 4
+Village1Tiles:
+#incext compress "flasuban.mapchip_config"
+
+ALIGN 4
+//Village1Animation:
+#include "village1animation/village1animationInstaller.event"
+
+EventPointerTable(0x8E, Village1Objects)
+EventPointerTable(0x8F, Village1Palette)
+EventPointerTable(0x90, Village1Tiles)

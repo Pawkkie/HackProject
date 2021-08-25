@@ -1,0 +1,12 @@
+PUSH
+
+// Extend prep/overworld item-use-textbox to fit third line.
+ORG 0x9C718
+BYTE 0xA2
+
+// Display RText in bottom-left corner
+// when using item in prep/overworld.
+// ORG 0x9C780
+// SHORT 0x2000 0x2192
+
+POP

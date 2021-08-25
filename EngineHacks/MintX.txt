@@ -1,0 +1,14 @@
+PUSH
+
+// Antitoxin into Panacea, clears all status effects
+ORG 0x290EE
+SHORT 0x2800 0xD001
+
+// Thracia Rescue Trading AKA Infinite Give & Take (ie. trading the rescued unit)
+ORG 0x229A8
+SHORT 0x1C00
+
+ORG 0x22A10
+SHORT 0x1C00
+
+POP

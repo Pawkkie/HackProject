@@ -1,0 +1,27 @@
+PUSH
+ORG $17E38
+jumpToHack(HPStrSklSpdBaseSeparate)
+
+ORG $17E68
+SHORT $46C0 $46C0
+POP
+
+ALIGN 4
+HPStrSklSpdBaseSeparate:
+#incbin "HPStrSklSpdBase.dmp"
+POIN SeparateUnitBasesTable
+
+#define True16 "True True True True True True True True True True True True True True True True"
+#define False16 "False False False False False False False False False False False False False False False False"
+#define basesTableEntry(UnitID,Boolean) "PUSH ; ORG SeparateUnitBasesTable + UnitID ; BYTE Boolean ; POP"
+
+ALIGN 4
+SeparateUnitBasesTable:
+// BYTE True16 True16 True16 True16 True16 True16 True16 True16 True16 True16 True16 True16 True16 True16 True16 True16
+BYTE False16 False16 False16 False16 False16 False16 False16 False16 False16 False16 False16 False16 False16 False16 False16 False16
+
+#undef True16
+#undef False16
+
+#include "SeparateUnitBasesTable.event"
+

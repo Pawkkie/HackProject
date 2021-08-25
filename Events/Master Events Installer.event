@@ -1,0 +1,8 @@
+ALIGN 4
+{
+  #include "Prologue.event"
+}
+ALIGN 4
+{
+  #include "TestChapter2.event"
+}

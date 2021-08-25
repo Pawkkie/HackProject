@@ -1,0 +1,19 @@
+# 0x0E93 StartTextHere
+StartHere[X]
+
+#include "TextChanges/Classes.txt"
+#include "TextChanges/Chapter1.txt"
+#include "TextChanges/Names.txt"
+#include "TextChanges/Other.txt"
+#include "TextChanges/Items.txt"
+
+# 0xD63 Explorer
+Explorer: All traversable[NL]
+terrain costs 1 movement.[X]
+
+# 0x319 NomadicTrooperDesc
+Fighters skilled in both sword and bow.[NL]
+Equip: Swords, bows.[X]
+
+
+

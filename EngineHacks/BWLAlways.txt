@@ -1,0 +1,4 @@
+PUSH
+ORG $86fe4
+  SHORT $46C0 $46C0
+POP

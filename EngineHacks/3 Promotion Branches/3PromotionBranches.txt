@@ -1,0 +1,18 @@
+//PUSH
+
+ORG 0xCCE90
+#incbin CCE90.bin
+
+ORG 0xCDD38
+#incbin CDD38.bin
+
+ORG 0xCDB80
+#incbin CDB80.bin
+
+ORG 0xCCE72
+#incbin CCE72.bin
+
+ORG 0xCCCD6
+#incbin CCCD6.bin
+
+//POP

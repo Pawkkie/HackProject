@@ -1,0 +1,2 @@
+[OpenRight][LoadCurrent]
+Hey, Card! It worked![A][X]

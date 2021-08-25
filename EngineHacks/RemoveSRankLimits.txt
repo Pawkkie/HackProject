@@ -1,0 +1,7 @@
+PUSH
+// Go to location
+ORG 0x2C150
+
+// Change to hex 11 E0
+BYTE 17 224
+POP

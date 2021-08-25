@@ -1,0 +1,6 @@
+PUSH
+
+ORG 0x59CF50
+BYTE 0x51 0xF4 0x04  // Enables suspend, this is the default0x080225B1
+
+POP

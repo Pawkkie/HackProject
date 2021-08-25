@@ -1,0 +1,2 @@
+[Right][LoadCurrent]
+Hey, look! It worked![A][X]

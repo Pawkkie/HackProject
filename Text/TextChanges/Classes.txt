@@ -1,0 +1,95 @@
+## NomadName
+Nomad[X]
+
+## NomadDesc
+Mounted roamers with good[NL]
+movement. Armed with bows.[X]
+
+## DreadFighterName ^
+Dread Fighter[X]
+
+## DreadFighterDesc 
+Mystic warriors from afar.[NL]
+Specialize in combating magic.[X]
+
+## HalberdierName
+Halberdier[X]
+
+## HalberdierDesc
+Agile soldiers and masters[NL]
+of the lance. Equip: Lance[X]
+
+## TricksterName
+Trickster[X]
+
+## TricksterDesc
+Trickster Desc[X]
+
+## WarClericName
+War Cleric[X]
+
+## WarClericDesc
+War Cleric Desc[X]
+
+## CrusaderName
+Crusader[X]
+
+## CrusaderDesc
+Crusader Desc[X]
+
+## DarkFlierName
+Dark Flier[X]
+
+## DarkFlierDesc
+Dark Flier Desc[X]
+
+## MarshallName
+Marshall[X]
+
+## MarshallDesc
+Marshall Desc[X]
+
+## ArmoredMarksmanName ^
+Armored Marksman[X]
+
+## ArmoredMarksmanDesc
+Armored Marksman Desc[X]
+
+## SpellFencerName
+Spell Fencer[X]
+
+## SpellFencerDesc
+Spell Fencer Desc[X]
+
+## MaligKnightName
+Malig Knight[X]
+
+## MaligKnightDesc
+Malig Knight Desc[X]
+
+## BowFighterName
+Bow Fighter[X]
+
+## BowFighterDesc
+Bow Fighter Desc[X]
+
+## SwordMercenaryName ^
+Swd Mercenary[X]
+
+## SwordMercenaryDesc
+Sword Mercenary Desc[X]
+
+## AxeMercenaryName ^
+Axe Mercenary[X]
+
+## AxeMercenaryDesc
+Axe Mercenary Desc[X]
+
+## AxeKnightName
+Axe Knight[X]
+
+## AxeKnightDesc
+Axe Knight Desc[X]
+
+## LanceKnightName
+Lance Knight[X]

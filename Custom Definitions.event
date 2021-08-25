@@ -1,0 +1,113 @@
+// External definitions
+#include "EngineHacks/SkillSys/CustomDefinitions.event"
+
+// Idk why this needs to be here but it does
+#define Item 0x9
+#define Spears 0x1
+#define IsPointer 0x08000000
+
+// Repointing class table
+#define ClassTable NewClassTable
+#define ItemTable NewItemTable
+
+// Character definitions
+#define Romi 0x1
+#define Rainer 0x2
+#define Ruby 0x3
+#define Ella 0x4
+#define Arla 0x5
+#define Ursula 0x6
+#define Kilvonso 0x7
+
+// Item definitions
+#define Dealbreaker 0xCE
+#define DealbreakerIcon 0xE0
+
+
+// Class definitions
+#define Nomad 0x80
+#define ThiefF 0x81
+#define MoveKnight 0x82
+#define PirateF 0x83
+#define AssassinF 0x84
+#define BerserkerF 0x85
+#define	WarriorF 0x86
+#define DreadFighter 0x87
+#define DreadFighterF 0x88
+#define SoldierF 0x89
+#define Halberdier 0x8A
+#define HalberdierF 0x8B
+#define TricksterF 0x8C
+#define Trickster 0x8D
+#define NomadF 0x8E
+#define RangerF 0x8F
+#define WarCleric 0x90
+#define WarClericF 0x91
+#define Crusader 0x92
+#define CrusaderF 0x93
+#define DarkFlierF 0x94
+#define Marshall 0x95
+#define ArmoredMarksman 0x96
+#define MarshallF 0x97
+#define SpellFencer 0x98
+#define MaligKnight 0x99
+#define BowFighter 0x9A
+#define SwordMercenary 0xF
+#define SwordMercenaryF 0x10
+#define AxeMercenary 0x9B
+#define AxeMercenaryF 0x9C
+#define AxeKnight 0x9D
+#define LanceKnight 0x9
+
+// Definitions to allow for battle animations
+// #define ClassAnimTable (0xc00008-0x20)
+#define AnimTableEntry(index) "ORG NewClassAnimTable - 0x20 + ((index) * 0x20)"
+#define SwordAnim(Animation) "BYTE Swords 0x01 ; SHORT Animation"
+#define SpearAnim(Animation) "BYTE Spears 0x01 ; SHORT Animation"
+#define AxeAnim(Animation) "BYTE Axes 0x01 ; SHORT Animation"
+#define HandAxeAnim(Animation) "BYTE HandAxe 0x00 ; SHORT Animation ; BYTE Tomahawk 0x00 ; SHORT Animation ; BYTE Hatchet 0x00 ; SHORT Animation"
+#define BowAnim(Animation) "BYTE Bows 0x01 ; SHORT Animation"
+#define StaffAnim(Animation) "BYTE Staves 0x01 ; SHORT Animation"
+#define AnimaAnim(Animation) "BYTE Anima 0x01 ; SHORT Animation"
+#define LightAnim(Animation) "BYTE Light 0x01 ; SHORT Animation"
+#define DarkAnim(Animation) "BYTE Dark 0x01 ; SHORT Animation"
+#define UnarmedAnim(Animation) "BYTE Item 0x01 ; SHORT Animation"
+#define SpecialAnim(Animation,Weapon) "BYTE Weapon 0x00 ; SHORT Animation"
+
+// Class Cards
+#define setCardEntry(cardEntry,cardLocation,cardPaletteLocation) "PUSH; ORG PortraitTable+cardEntry*0x1C; POIN 0 0 cardPaletteLocation 0 cardLocation; POP" 
+#define NomadCard 0xAD
+#define ThiefFCard 0xAE
+#define AssassinFCard 0xAF
+#define PirateFCard 0xB0
+#define BerserkerFCard 0xB1
+#define WarriorFCard 0xB2
+#define DreadFighterCard 0xB3
+#define DreadFighterFCard 0xB4
+#define SoldierFCard 0xB5
+#define HalberdierCard 0xB6
+#define HalberdierFCard 0xB7
+#define TricksterCard 0xB8
+#define TricksterFCard 0xB9
+#define RangerFCard 0xBA
+#define WarClericCard 0xBB
+#define WarClericFCard 0xBC
+#define CrusaderCard 0xBD
+#define CrusaderFCard 0xBE
+#define DarkFlierFCard 0xBF
+#define MarshallCard 0xC0
+#define ArmoredMarksmanCard 0xC1
+#define MarshallFCard 0xC0
+#define SpellFencerCard 0xC1
+#define WyvernRiderCard 0xC2
+#define WyvernLordCard 0xC3
+#define MaligKnightCard 0xC4
+#define BowFighterCard 0xC5
+#define SwordMercenaryCard 0xC6
+#define SwordMercenaryFCard 0xC7
+#define AxeMercenaryCard 0xC8
+#define AxeMercenaryFCard 0xC9
+#define AxeKnightCard 0xCA
+
+// Include repointer file
+#include "Repointers.event"

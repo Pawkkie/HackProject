@@ -1,0 +1,163 @@
+Help:
+- #hacking_help
+- Clendo
+- Sme
+- Snek
+- Pikmin
+- Vesly
+- Teq
+- Stan
+
+- #spell_academy
+- Huichelaar
+- Zane
+- Sme
+
+A S S E T S:
+
+Characters:
+Arla - Raulster
+Romi - Atey
+Ella (Eleanor) - AmBrosiac
+Nora - flasuban, mk404, nickt
+Ursula - CapibaraInSpace
+Rainer - Astelaine
+Kilvonso - hypergammaspaces
+
+Other:
+statscreen - SaXoR
+
+Items:
+Dealbreaker - Beannmond
+
+Battle Anims:
+Assassin - Glenwing, Andy, SD9K
+AssassinF - Keks_Krebs, Beccarte, SD9K
+General - TheBlindArcher, Nuramon, knabepicer, Pushwall
+PirateF - Nuramon, MarioKirby, Wan
+ThiefF - Eldritch Abomination
+BerserkerF - eCut, Skitty
+WarriorF - FEGirls
+Dread Fighter + F - Nuramon
+Soldier - Alusq
+SoldierF - JeyTheCount, Maiser6
+Halberdier - Bonestorm
+HalberdierF - Yazuki
+Trickster - Staff by Ukulele, SD9k
+TricksterF - Pikmin1211, Maiser6, Ukelele, SD9k, Temp, Black Mage, Wan, Sme
+War Cleric + F - Der, Pikmin1211
+Crusader + F - St Jack
+Dark Flier - Ayr, Marlon0024
+Griffon Rider - EldritchAbomination, Raspberry, Ary
+Armoured Marksman - Salvaged
+Marshall + F - Nuramon, ZoramineFae
+Spell Fencer - Red Bean + Jeorge_Reds
+Wyvern Rider - Mikey Seregon, Alfred Kamon.
+Wyvern Lord - Nuramon
+Malig Knight - Pikmin1211, Jj09, 7743, Jey the Count
+Bow Fighter - Leo_Link, knabepicer
+AxeMercenaryM - Salvaged
+AxeMercensaryF - Maiser6, Pikmin1211, MK404
+SwordMercenaryM - Salvaged
+SwordMercenaryF - Salvaged, JeyTheCount
+AxeKnight - TheBlindArcher
+ClericF - BatimaTheBat
+
+Map Anims:
+AssassinF - RobertFPY
+General - Nuramon
+PirateF - flasuban, Mikey_Seregon
+BerserkerF - Pikmin, Der
+WarriorF - FEGirls
+Soldier - Argo
+SoldierF - Argo
+Dread Fighter + F - Nuramon
+Halberdier - GLEphraim by Dellhonne as a reference
+TricksterF - Aruka, Kenpuhu
+Berserker - NYZgamer3
+War Cleric + F - Der
+Crusader + F - Unknown
+Dark Flier - Ayr
+Griffon Rider - N426
+Armoured Marksman - Salvaged
+Marshall - Dei, dondon151
+MarshallF - Dei, dondon151, blood
+Spell Fencer - blood
+Wyvern Rider - Unknown
+Wyvern Lord - ArcaneEli
+Malig Knight - Pikmin
+Bow Fighter - Scraiza
+AxeMercenaryM - L95
+AxeMercensaryF - Pikmin
+SwordMercenaryM - L95, Warpath
+SwordMercenaryF - L95, Warpath, me
+AxeKnight - Agro
+ClericF - BatimaTheBat
+
+Class Cards:
+ThiefF - L95
+AssassinF - Pushwall, L95
+PirateF - hypergammespaces
+BerserkerF - Der
+WarriorF - Jj09
+Dread Fighter + F - Nuramon
+SoldierF - Flasuban
+Halberdier - TBA
+RangerF - RobertFPY
+War Cleric + F - Der
+Crusader + F - flasuban, RobertFPY
+Dark Flier - Melia
+Griffon Rider - EldritchAbomination, N426, Jj09
+Armoured Marksman - Salvaged
+Marshall - Unknown
+Spell Fencer - Yggdra
+Wyvern Rider - flasuban
+Wyvern Lord - flasuban
+Malig Knight - Pikmin
+Bow Fighter - Spud
+AxeMercenaryM - flasuban
+AxeMercensaryF - Pikmin, flasuban
+SwordMercenaryF - Unknown
+
+ASM:
+SkillSys - whole SkillSys crew
+3 Promotion Branches - ThreeGreens
+Display All 8 Weapon Ranks - Kirb
+Base Conversations - Snek
+DancerRingRefresh - Sme
+ModularMinimugBox - Zane
+SupportReworkRework - Snek
+SummonEXP - Snek
+StatScreenBlink - Stan
+RemoveIntros - Gryz
+RemoveSRankLimits - Tequila
+FixItemUseTextBox - Huichelaar
+BWLAlways - gamma
+Less annoying fog - Leonarth
+Promotion ranks fix - Leonarth
+FillAIDangerMap - gamma
+Arms Scroll - Snek
+Danger Radius - Huichelaar
+Custom Chapter Intro - Huichelaar
+Extend standing map sprite list - Snek, Icecube
+Convoy Combine - Tequila
+DoNotClearSupportWhenUnitDies - 7743
+Expanded Convoy - Snek, Pikmin1211, Sme, Tequila, Blademaster
+7743,aera,FE8 Girls
+Early game EXP fix - Vennobennu
+GroupAI - PhantomSentine
+HidePlatform - Leonarth
+Thracia Rescue Trading - MintX
+Antitoxin to Panacea - MintX
+Hiddem Items - Leonarth
+Casual Mode - gamma, 7743
+SupportViewerUnlock - 7743
+LimitlessTrading - aera
+TextEngineRework - Tequila
+StatPortraitFix - Stan
+Extend item icon list - aera
+
+Open Source:
+- Clendo
+- Snek
+- Vesly

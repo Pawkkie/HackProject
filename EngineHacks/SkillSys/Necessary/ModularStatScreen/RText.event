@@ -1,0 +1,226 @@
+  /*
+
+  stat screen R menu is at 8a00b38
+  find by breaking on key press while R menu open
+
+  Each entry is 6 words
+  Pointer 1 (up)
+  Pointer 2 (down)
+  Pointer 3 (left)
+  Pointer 4 (right)
+  x,y,Txtid
+  Zero
+  (Optional Pointer for alternate text routine)
+
+  ST_Name:
+  WORD 0
+  POIN ST_Class
+  WORD 0
+  POIN ST_Luck
+  BYTE 0x18
+  BYTE 0x50
+  SHORT 0
+  WORD 0
+
+  */
+
+  //#include "EAstdlib.event"
+
+  #define RMenu(up,down,left,right,xcoord,ycoord,TID) "POIN up down left right;BYTE xcoord ycoord; SHORT TID; WORD 0 0;"
+  #define RMenu(up,down,left,right,xcoord,ycoord,TID,Getter) "POIN up down left right; BYTE xcoord ycoord; SHORT TID; POIN 0 Getter|1"
+  #define RMenu(up,down,left,right,xcoord,ycoord,SlotID,Looper,Getter) "POIN up down left right; BYTE xcoord ycoord; SHORT SlotID; POIN Looper|1 Getter|1"
+
+  #define NameDescGetter 0x88bd5
+  #define ClassDescGetter 0x88c01
+  #define ConditionGetter 0x88a2d
+  #define StrMagGetter 0x88b09
+  
+  PUSH // R menu
+ORG 0xa00b38
+ST_Name:
+  RMenu(0,ST_Class,0,ST_Luck,0x18,0x50,0x0,NameDescGetter)
+ST_Class:
+  RMenu(ST_Name,ST_Level,0,ST_Def,0x6,0x68,0x6E8,ClassDescGetter)
+ST_Level:
+  RMenu(ST_Class,ST_HP,0,ST_Exp,0x6,0x78,0x542)
+ST_Exp:
+  RMenu(ST_Class,ST_HP,ST_Level,ST_Res,0x26,0x78,0x543)
+ST_HP:
+  RMenu(ST_Level,0,0,ST_Res,0x6,0x88,0x544)
+
+ST_Str:
+  RMenu(PersonalDataRText,ST_Skl,ST_Name,ST_Mag,0x68,0x18,0x546)
+ST_Mag:
+  RMenu(PersonalDataRText,ST_Spd,ST_Str,0,0xA8,0x18,0x547)
+ST_Skl:
+  RMenu(ST_Str,ST_Def,ST_Name,ST_Spd,0x68,0x28,0x548)
+ST_Spd:
+  RMenu(ST_Mag,ST_Res,ST_Skl,0,0xA8,0x28,0x549)
+ST_Def:
+  RMenu(ST_Skl,ST_Luck,ST_Name,ST_Res,0x68,0x38,0x54b)
+ST_Res:
+  RMenu(ST_Spd,ST_Mov,ST_Def,0,0xA8,0x38,0x54c)
+ST_Luck:
+  RMenu(ST_Def,ST_Con,ST_Name,ST_Mov,0x68,0x48,0x54a)
+ST_Mov:
+  RMenu(ST_Res,ST_Aid,ST_Luck,0,0xA8,0x48,0x54d)
+POP
+
+//the rest of these are here because space
+ALIGN 4
+
+ST_Con:
+  RMenu(ST_Luck,ST_Talk,ST_Name,ST_Aid,0x68,0x58,0x54e)
+ST_Aid:
+  RMenu(ST_Mov,ST_Trv,ST_Con,0,0xA8,0x58,0x54F)
+ST_Cond:
+  RMenu(ST_Aid,ST_Talk,ST_Spd,0,0xa6,0x48,0x552,ConditionGetter)
+ST_Talk:
+  RMenu(ST_Con,ST_BWL,ST_Class,ST_Trv,0x68,0x68,SS_TalkRText)
+ST_Trv:
+  RMenu(ST_Aid,ST_BWL,ST_Talk,0,0xA8,0x68,0x550)
+ST_BWL:
+  RMenu(ST_Talk,0,ST_Class,0,0x70,0x78,BWLRText)
+//ST_Affin:
+  //#ifdef LEADERSHIP_STARS
+    //RMenu(ST_Cond,ST_Talk,ST_Spd,0,0xa6,0x48,LeadRText)
+  //#else
+    //RMenu(ST_Cond,ST_Talk,ST_Spd,0,0xa6,0x48,0x551)
+  //#endif
+//ST_Cond:
+  //RMenu(ST_Affin,ST_Talk,ST_Spd,0,0xA6,0x48,0x552,ConditionGetter)
+ST_Skills:
+  RMenu(ST_Talk,ST_Skill1,ST_Res,0,0xA6,0x78,SS_SkillsRText)
+ST_Skill1:
+  RMenu(ST_Skills,0,ST_Res,ST_Skill2,0xa6,0x88,0,RTextLoop,SkillDescGetter)
+ST_Skill2:
+  RMenu(ST_Skills,0,ST_Skill1,ST_Skill3,0xb6,0x88,1,RTextLoop,SkillDescGetter+4)
+ST_Skill3:
+  RMenu(ST_Skills,0,ST_Skill2,ST_Skill4,0xc6,0x88,2,RTextLoop,SkillDescGetter+8)
+ST_Skill4:
+  RMenu(ST_Skills,0,ST_Skill3,ST_Skill5,0xd6,0x88,3,RTextLoop,SkillDescGetter+12)
+ST_Skill5:
+  RMenu(ST_Skill2,0,ST_Skill4,ST_Skill6,0xbe,0x88,4,RTextLoop,SkillDescGetter+16)
+ST_Skill6:
+  RMenu(ST_Skill3,0,ST_Skill5,0,0xd6,0x88,5,RTextLoop,SkillDescGetter+20)
+#ifdef PRESS_SELECT_TO_VIEW_GROWTHS
+  PersonalDataRText:
+  RMenu(0,ST_Str,0,0,0x76,0x4,PersonalDataDesc1)
+#else
+  PersonalDataRText:
+  RMenu(0,ST_Str,0,0,0x76,0x4,PersonalDataDesc2)
+#endif  
+
+// Page 2 Rtext stuff, shoutout to gamma
+PUSH
+
+#define ItemMenuRtextGetter 0x88A00
+#define ItemMenuRtextLooper 0x88B40
+
+ORG $A00D14 //sidebar
+IT_Name:
+  RMenu(0,IT_Class,0,InventoryRtext4,0x18,0x50,0x0,NameDescGetter)
+IT_Class:
+  RMenu(IT_Name,IT_Level,0,Inventory_Rng,0x6,0x68,0x6E8,ClassDescGetter)
+IT_Level:
+  RMenu(IT_Class,IT_HP,0,IT_Exp,0x6,0x78,0x542)
+IT_Exp:
+  RMenu(IT_Class,IT_HP,IT_Level,Inventory_Atk,0x26,0x78,0x543)
+IT_HP:
+  RMenu(IT_Level,0,0,Inventory_Hit,0x6,0x90,0x544)
+
+ORG $A00DA0 //items start here
+InventoryRtext1:
+  RMenu(0,InventoryRtext2,IT_Name,0,0x68,0x18,0x00,ItemMenuRtextLooper,ItemMenuRtextGetter)
+InventoryRtext2:
+  RMenu(InventoryRtext1,InventoryRtext3,IT_Name,0,0x68,0x28,0x0001,ItemMenuRtextLooper,ItemMenuRtextGetter)
+InventoryRtext3:
+  RMenu(InventoryRtext2,InventoryRtext4,IT_Name,0,0x68,0x38,0x0002,ItemMenuRtextLooper,ItemMenuRtextGetter)
+InventoryRtext4:
+  RMenu(InventoryRtext3,InventoryRtext5,IT_Name,0,0x68,0x48,0x0003,ItemMenuRtextLooper,ItemMenuRtextGetter)
+InventoryRtext5:
+  RMenu(InventoryRtext4,Inventory_Atk,IT_Name,Inventory_Rng,0x68,0x58,0x0004,ItemMenuRtextLooper,ItemMenuRtextGetter)
+
+ORG $A00E2C //bottom thing with atk/crit/etc
+Inventory_Atk:
+  RMenu(InventoryRtext5,Inventory_Hit,IT_Exp,Inventory_Crt,0x76,0x78,0x55C)
+Inventory_Hit:
+  RMenu(Inventory_Atk,0,IT_HP,Inventory_Avo,0x76,0x88,0x55D)
+Inventory_Rng:
+  RMenu(InventoryRtext5,Inventory_Crt,IT_Class,0,0xae,0x68,0x55E)
+Inventory_Crt:
+  RMenu(Inventory_Rng,Inventory_Avo,Inventory_Atk,0,0xae,0x78,0x55F)
+Inventory_Avo:
+  RMenu(Inventory_Crt,0,Inventory_Hit,0,0xae,0x88,0x560)
+
+POP
+
+// Page 3 RText, location from gamma
+PUSH
+ORG 0xA00EB8
+ST_Name3:
+  RMenu(0,ST_Class3,0,0,0x18,0x50,0x0,NameDescGetter)
+ST_Class3:
+  RMenu(ST_Name3,ST_Level3,0,0,0x6,0x68,0x6E8,ClassDescGetter)
+ST_Level3:
+  RMenu(ST_Class3,ST_HP3,0,ST_Exp3,0x6,0x78,0x542)
+ST_Exp3:
+  RMenu(ST_Class3,ST_HP3,ST_Level3,0,0x26,0x78,0x543)
+ST_HP3:
+  RMenu(ST_Level3,0,0,0,0x6,0x88,0x544)
+
+ST_SwordR:
+  RMenu(ST_SkillsP3,ST_LanceR,0,ST_Skill1P3,0x68,0x18,0x561)
+ST_LanceR:
+  RMenu(ST_SwordR,ST_AxeR,0,ST_Skill2P3,0x68,0x28,0x562)
+ST_AxeR:
+  RMenu(ST_LanceR,ST_BowR,0,ST_Skill3P3,0x68,0x38,0x563)
+ST_BowR:
+  RMenu(ST_AxeR,ST_AnimaR,0,ST_Skill4P3,0x68,0x48,0x564)
+ST_AnimaR:
+  RMenu(ST_BowR,ST_LightR,0,ST_Skill5P3,0x68,0x58,0x565)
+ST_LightR:
+  RMenu(ST_AnimaR,ST_DarkR,0,ST_Skill6P3,0x68,0x68,0x566)
+ST_DarkR:
+  RMenu(ST_LightR,ST_StaffR,0,ST_Skill6P3,0x68,0x78,0x567)
+ST_StaffR:
+  RMenu(ST_DarkR,0,0,ST_Skill6P3,0x68,0x88,0x568)
+
+ST_SkillsP3:
+  RMenu(0,ST_SwordR,0,0,0x76,0x4,SS_SkillsRText)
+ST_Skill1P3:
+  RMenu(ST_SkillsP3,ST_Skill2P3,ST_SwordR,0,0xA8,0x18,0,RTextLoop,SkillDescGetter)
+ST_Skill2P3:
+  RMenu(ST_Skill1P3,ST_Skill3P3,ST_LanceR,0,0xA8,0x28,1,RTextLoop,SkillDescGetter+4)
+ST_Skill3P3:
+  RMenu(ST_Skill2P3,ST_Skill4P3,ST_AxeR,0,0xA8,0x38,2,RTextLoop,SkillDescGetter+8)
+ST_Skill4P3:
+  RMenu(ST_Skill3P3,ST_Skill5P3,ST_BowR,0,0xA8,0x48,3,RTextLoop,SkillDescGetter+12)
+ST_Skill5P3:
+  RMenu(ST_Skill4P3,ST_Skill6P3,ST_AnimaR,0,0xA8,0x58,4,RTextLoop,SkillDescGetter+16)
+ST_Skill6P3:
+  RMenu(ST_Skill5P3,0,ST_LightR,0,0xA8,0x68,5,RTextLoop,SkillDescGetter+20)
+POP
+
+ /*
+RText_Page4:
+
+  ST_Name4:
+    RMenu(0,ST_Class4,0,ST_Donate,0x18,0x50,0x0,NameDescGetter)
+
+  ST_Class4:
+    RMenu(ST_Name4,ST_Level4,0,ST_Donate,0x6,0x68,0x6E8,ClassDescGetter)
+
+  ST_Level4:
+    RMenu(ST_Class4,ST_HP4,0,ST_Exp4,0x6,0x78,0x542)
+
+  ST_Exp4:
+    RMenu(ST_Class4,ST_HP4,ST_Level4,ST_Donate,0x26,0x78,0x543)
+
+  ST_HP4:
+    RMenu(ST_Level4,0,0,ST_Donate,0x6,0x88,0x544)
+
+  ST_Donate:
+    RMenu(0,0,ST_Name4,0,0x86,0x48,DonateURL)
+ */
+//#include "SupportRText/Installer.event"

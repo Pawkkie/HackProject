@@ -1,0 +1,28 @@
+*.sav
+*.sgm
+*.gba
+*.sym
+*.wav
+*.ups
+*.SNA
+*.nlz
+*.avi
+*.mp4
+*.lnk
+FEBuilder.cmd
+FEBuilderClean.cmd
+MAKE HACK_full_vba.cmd
+MAKE HACK_quick_vba.cmd
+vba.cmd
+vbaClean.cmd
+Workflows/
+Music/
+ROMs/
+Images/
+Graphics/
+EngineHacks/PAWKKIE/Testing
+Notes/
+VeslyAutoDmpExamples/
+Images/
+Tools/
+EventAssembler/

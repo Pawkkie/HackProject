@@ -1,0 +1,41 @@
+#ifndef MODULAR_GETTER_DEFENSE_EVENT
+#define MODULAR_GETTER_DEFENSE_EVENT
+
+#include "_Common.event"
+
+pDefenseModifiers: // Defense
+	POIN prAddUnitDefense prHalveIfCapturing prDebuffDef prAddEquipDefense prItemPassiveDefense prRallyDef prLifeAndDeathMinus VigorDanceCheck prSkillFury prFortressDefenseDef prDefiantDef prPushDef
+	#ifdef ACCESSORIES_AND_FORGING
+		POIN prAddAccessoryDefense
+	#endif 
+	#ifdef DEBUFFS_MIN_ZERO
+	POIN prMinZero
+	#endif
+WORD 0
+
+prAddUnitDefense:
+	rAdd(rSByteAt(UNIT_DEFENSE))
+	
+prAddEquipDefense:
+	rAdd(rForUnitEquipped(rCallExternal(prGetItemDefBonus)))
+
+	#ifdef ACCESSORIES_AND_FORGING
+prAddAccessoryDefense:
+	rAdd(rForUnitEquippedAccessory(rCallExternal(prGetItemDefBonus)))
+	#endif 
+	
+prDebuffDef:
+	#include "_asm/DebuffDef.lyn.event"
+	POIN GetDebuffs|1
+
+prRallyDef:
+	#include "_asm/RallyDef.lyn.event"
+	POIN GetDebuffs|1
+	
+prFortressDefenseDef:
+	_testSkill(FortressDefenseID,5,0)
+
+prItemPassiveDefense:
+	rPassiveStatBoosts(STAT_DEFENSE)
+
+#endif // MODULAR_GETTER_DEFENSE_EVENT

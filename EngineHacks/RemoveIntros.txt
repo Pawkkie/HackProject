@@ -1,0 +1,21 @@
+PUSH
+
+// Remove intro world map events
+ORG $A39768
+EVBIT_MODIFY 0x1
+SKIPWN
+ENDA
+
+//Skip New Game text
+ORG $C4928
+SHORT 0
+
+//Silence New Game music
+ORG $C4A0C
+BYTE 0
+
+// Remove intro scene and class roll, stay on the title screen
+ORG $C63AD
+BYTE 224
+
+POP

@@ -1,0 +1,152 @@
+﻿//Made by Camtech075 of SerenesForest
+//Modified by Nintenlord
+
+#include EAstdlib.event
+
+EventPointerTable(7,MyEvents)
+
+ORG StartOffset
+MyEvents:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData TrapData
+POIN Units Units //second one can be UnitsHard
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+TurnBasedEvents:
+// TURN flagID pointer [startTurn, endTurn] phase 0
+// flagID is the ID what will be activated when the turn event is activated, or prevent event from running if set
+// Macros:
+// TurnEventPlayer(eventID,pointer,turn)
+// TurnEventPlayer(eventID,pointer,startTurn,amountOfTurns)
+// TurnEventEnemy(eventID,pointer,turn)
+// TurnEventEnemy(eventID,pointer,startTurn,amountOfTurns)
+// TurnEventNPC(eventID,pointer,turn)
+// TurnEventNPC(eventID,pointer,startTurn,amountOfTurns)
+// Survive(pointer,endturn)
+// OpeningTurnEvent(pointer)
+END_MAIN
+ALIGN 32 //For some reason, CharacterBasedEvents have to be 32-Aligned?
+
+CharacterBasedEvents:
+// CHAR flagID eventPointer [char1,char2] 0
+// flagID is the ID of the flag that denotes if the event has happened
+// eventPointer is the label for the event to play when the two chars talk
+// char1 is the one who starts the convo
+// char2 is the one who it is started with (this is a one-way thing; if you set character ID to 0, this denotes that any unit will suffice for the talk conversation)
+// to make it go BOTH ways, you need a second CHAR with the characters swapped
+// Macros:
+// CharacterEvent(eventID,pointer,char1,char2)
+// CharacterEventBothWays(eventID,eventPtr,char1,char2)
+END_MAIN
+
+LocationBasedEvents: //really more "map objects" such as shops/ houses/ etc.
+// Seize: LOCA 3 [X,Y] 0x11
+// Macro:
+// Seize(seizeX,seizeY)
+
+// LOCA flagID offset [xpos,ypos] objectType
+// flagID checks if run; offset is label for data accompanying map object (not always an event); xpos ypos are coordinates
+// Object types:
+// 	0x10 is a house event; its offset is the label for house event
+//	0x11 is a seize event; its offset is the label for the event to run. If no offset, runs EndingScene
+//	0x12 is a door event; no offset
+//	0x14 is a chest event; no offset
+//	0x16 is an armoy; offset is a shop list
+//	0x17 is a vendor; offset is a shop list
+//	0x18 is a secret shop; offset is a shop list
+//	0x20 is a village center; used when enemies target and destroy to know where to move towards. No offset
+// Shop lists are easy to set up; put a label for them, then put SHLI item1 item2 item3 ... item21 (no more than 21 items)
+// Macros:
+// Village(flagID,eventOffset,villX,villY)
+// House(flagID,eventOffset,villX,villY)
+// Armory(shopListOffset,shopX,shopY)
+// Vendor(shopListOffset,shopX,shopY)
+// SecretShop(shopListOffset,shopX,shopY)
+// Chest(item,chestX,chestY)
+// ChestMoney(amountOfMoney,chestX,chestY) (set this by setting the itemID to the amount of money you want it to be (must be higher than 255, otherwise an item)
+// Door(doorX,doorY)
+// Seize(seizeX,seizeY)
+END_MAIN
+
+MiscBasedEvents:
+CauseGameOverIfLordDies //set flag 101/0x65 for other game overs
+// AFEV flagID eventOffset activationFlag
+// AREA flagID eventOffset [corner1x,corner1y] corner2x, corner2y
+// AFEV runs right after activationFlag is set; when it runs, it sets flagID and runs event eventOffset.
+// AREA runs when any unit steps into area defined by [top let] bottom right.
+// Defeat Boss: AFEV 3 eventOffset 2 (death quite needs to set flag 2)(most of the time eventOffset wants to be set to EndingScene)
+// Route: AFEV 0 eventOffset 6 (again, mostly will want eventOffset to be EndingScene)
+// Macros:
+// DefeatBoss(eventOffset)
+// DefeatAll(eventOffset)
+END_MAIN
+
+Dunno:
+WORD $00
+END_MAIN
+
+Tutorial:
+WORD $00
+END_MAIN
+
+TrapData:
+//Mostly misc stuff; ballistae, fire traps, poison gas, vertical arrows, gorgon eggs, instant fire, mines, light runes, tile changes, snags, breakable walls, torch staves; most of this is made automatically.
+// BLST [XX,YY] type
+// FIRE [x,y] startTurn repeatTimer
+// GAST [x,y] directino startTurn repeatTimer
+// ARROW [x,y] startTurn repeatTimer
+// FIRE2 [x,y]
+// MINE [x,y]
+// EGG [x,y] startTurn level
+// xy is location; startTurn is the turn it activates; repeatTimer is how many turns until it activates again; direction is direction it should face; type is 0x34 (standard), 0x35 (iron), 0x36 (killer); level is size of gorgon.
+// Macros:
+// NormalBallista(XX,YY)
+// IronBallista(XX,YY)
+// KillerBallista(XX,YY)
+// FireTrap(XX,YY,startTurn,repeatTimer)
+// GasTrap(XX,YY,direction,startTurn,repeatTimer)
+// ArrowTrap(XX,YY,startTurn,repeatTimer)
+// InstantFireTrap(XX,YY)
+// MineTrap(XX,YY)
+// GorgonEggTrap(XX,YY,startTurn,level)
+ENDTRAP
+
+ALIGN 4
+
+Units:
+//UNIT charID classID leaderID Level(level,allegiance,autolevel) [x,y] flags 0x0 numberOfREDAs pointerToREDAs [item1, item2, item3, item4] [ai1, ai2, ai3, ai4]
+//flags: 
+	// 4 and 8 are unused
+	// MonsterTemplate = rng monster unit based on class ID (don't use this)
+	// DropItem = drop last item in inventory
+//numberOfREDAs and pointerToREDAs have to do with unit movement after laoding
+//must have at least 1 item
+//ais:
+UNIT Eirika EirikaLord Eirika Level(1,Ally,False) [2,16] 0x0 0x0 0x0 0x1 [Rapier,Vulnerary] NoAI
+UNIT Seth Paladin Eirika Level(1,Ally,False) [1,17] 0x0 0x0 0x0 0x1 [SilverLance,SteelSword] NoAI
+UNIT
+
+BeginningScene:
+//LOAD RestrictionType UnitsOffset (for player units)
+//ENUN
+//LOAD RestrictionType UnitsOffset (for enemy units)
+//ENUN
+//ENDA
+//what for neutral units?
+
+LOAD1 1 PlayerUnits
+ENUN
+LOAD1 0 EnemyUnits
+ENDA
+
+EndingScene:
+MoveToChapter(NextChapter)
+ENDA
+
+MESSAGE Events end at offset CURRENTOFFSET

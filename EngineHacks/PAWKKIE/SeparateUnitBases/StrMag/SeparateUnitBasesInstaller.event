@@ -1,0 +1,14 @@
+PUSH
+ORG $17E38
+jumpToHack(HPStrSklSpdBaseSeparate)
+
+ORG $17E68
+SHORT $46C0 $46C0
+POP
+
+ALIGN 4
+HPStrSklSpdBaseSeparate:
+#incbin "HPStrSklSpdBase.dmp"
+POIN SeparateUnitBasesTable
+
+

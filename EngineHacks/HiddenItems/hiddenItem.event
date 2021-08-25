@@ -1,0 +1,21 @@
+#ifdef _FE8_
+	#ifndef hiddenItemInstalled
+		#define hiddenItemInstalled
+/*	
+This routine and macro make doing desert hidden items really easy (I hope)
+The chance to find a hidden item is luck%, unless the unit can steal or lockpick, then it's 100%
+The routine checks for it being player phase and includes an ENDA, you only need to follow the instructions
+
+To use this:
+Create an AREA event under the MiscBasedEvents: AREA eventID yourLabel [corner1 x,corner1 y] [corner2 x, corner2 y]
+Create a label in your events that matches the label in your AREA event
+Use the hiddenItem(eventID,itemID) macro with an eventID that matches that of the AREA event
+*/
+		ALIGN 4
+		hiddenItem:
+		#incbin "hiddenItem.dmp"
+		ALIGN 4
+		
+		#define hiddenItem(eventID,itemID) "ENUF eventID; SVAL 3 itemID; ASMC hiddenItem|1; BEQ eventID 0xB 0x0; GIVEITEMTO 0xFFFF; ENUT eventID; LABEL eventID; NoFade; ENDA"
+	#endif
+#endif

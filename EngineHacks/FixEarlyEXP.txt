@@ -1,0 +1,5 @@
+PUSH
+ORG 0x2C474
+BYTE 0x00
+POP
+// Adjust Mode Coefficient Experience Gain from FEBuilder

@@ -1,0 +1,41 @@
+EventPointerTable(0x91, Village1Animation)
+#ifndef tilesetAnimation
+    #define tilesetAnimation(speed, size, pointer)    "BYTE speed 0; SHORT size; POIN pointer"
+#endif
+
+ALIGN 4
+Village1Animation0:
+#incext png2dmp "villageanims.mapanime1_000.png"
+ALIGN 4
+Village1Animation1:
+#incext png2dmp "villageanims.mapanime1_001.png"
+ALIGN 4
+Village1Animation2:
+#incext png2dmp "villageanims.mapanime1_002.png"
+ALIGN 4
+Village1Animation3:
+#incext png2dmp "villageanims.mapanime1_003.png"
+ALIGN 4
+Village1Animation4:
+#incext png2dmp "villageanims.mapanime1_004.png"
+ALIGN 4
+Village1Animation5:
+#incext png2dmp "villageanims.mapanime1_005.png"
+ALIGN 4
+Village1Animation6:
+#incext png2dmp "villageanims.mapanime1_006.png"
+ALIGN 4
+Village1Animation7:
+#incext png2dmp "villageanims.mapanime1_007.png"
+
+ALIGN 4
+Village1Animation:
+tilesetAnimation(0x10,0x1000,Village1Animation0)
+tilesetAnimation(0x10,0x1000,Village1Animation1)
+tilesetAnimation(0x10,0x1000,Village1Animation2)
+tilesetAnimation(0x10,0x1000,Village1Animation3)
+tilesetAnimation(0x10,0x1000,Village1Animation4)
+tilesetAnimation(0x10,0x1000,Village1Animation5)
+tilesetAnimation(0x10,0x1000,Village1Animation6)
+tilesetAnimation(0x10,0x1000,Village1Animation7)
+WORD 0 0

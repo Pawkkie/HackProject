@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.4" tiledversion="1.4.2" orientation="orthogonal" renderorder="right-down" width="32" height="32" tilewidth="16" tileheight="16" infinite="0" nextlayerid="4" nextobjectid="1">
+ <properties>
+  <property name="Main" value=""/>
+ </properties>
+ <tileset firstgid="1" name="01005B03" tilewidth="16" tileheight="16" tilecount="1024" columns="32">
+  <image source="../../../Tiled/Tilesets/FE8/01005B03.png" width="512" height="512"/>
+ </tileset>
+ <layer id="1" name="Main" width="32" height="32">
+  <properties>
+   <property name="Anims1" type="int" value="0"/>
+   <property name="Anims2" type="int" value="0"/>
+   <property name="ChapterID" type="int" value="1"/>
+   <property name="Main" value=""/>
+   <property name="MapChangesID" type="int" value="9"/>
+   <property name="MapID" type="int" value="8"/>
+   <property name="ObjectType" type="int" value="1"/>
+   <property name="PaletteID" type="int" value="2"/>
+   <property name="TileConfig" type="int" value="3"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt0jEOQEAUhOFJ3k1UOAnOsQVutg1OgpPgCKZYERqJZGmm+IrZ4v3NegBeRETkQWdAT4Nd31PujHKL2x95f6KZHE4Fd0lV5P7C+yttoZ+Efs3dUBu5f3A3X/+Dv/siIiLy3g4Nj55D
+  </data>
+ </layer>
+ <layer id="2" name="Village Close" width="32" height="32">
+  <properties>
+   <property name="Height" type="int" value="1"/>
+   <property name="ID" type="int" value="1"/>
+   <property name="Width" type="int" value="1"/>
+   <property name="X" type="int" value="19"/>
+   <property name="Y" type="int" value="14"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztzjENAAAIA7BZwb9JLCzh4GkVNAEALuY7AABQWC9DACI=
+  </data>
+ </layer>
+ <layer id="3" name="Chest Open" width="32" height="32">
+  <properties>
+   <property name="Height" type="int" value="1"/>
+   <property name="ID" type="int" value="0"/>
+   <property name="Width" type="int" value="1"/>
+   <property name="X" type="int" value="16"/>
+   <property name="Y" type="int" value="14"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztzjENAAAMA6Bm/kVPQ68+oIAEAGjdOgAAUHohgAAD
+  </data>
+ </layer>
+</map>

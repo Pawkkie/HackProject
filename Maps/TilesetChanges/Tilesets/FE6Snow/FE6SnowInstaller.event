@@ -1,0 +1,17 @@
+// FE6 Snow
+ALIGN 4
+SnowObjects:
+#incext Png2Dmp "SnowOutside.png" --lz77
+ALIGN 4
+SnowPalette:
+#incbin "SnowOutsidePalette.dmp"
+ALIGN 4
+SnowTiles:
+#incext compress "SnowOutside.mapchip_config"
+ALIGN 4
+// SnowOutsideAnimation:
+#include "SnowOutsideAnimation/SnowOutsideAnimationInstaller.event"
+
+EventPointerTable(0x8B, SnowObjects)
+EventPointerTable(0x8C, SnowPalette)
+EventPointerTable(0x8D, SnowTiles)

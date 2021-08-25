@@ -1,0 +1,21 @@
+PUSH
+
+ORG 0x154FE
+#incbin "nop4byte.bin"
+ORG 0x1C318
+#incbin "nop4byte.bin"
+ORG 0x1C89E
+#incbin "nop4byte.bin"
+ORG 0x1D22C
+#incbin "nop4byte.bin"
+ORG 0x2CDDE
+#incbin "nop4byte.bin"
+ORG 0x31F06
+#incbin "nop4byte.bin"
+ORG 0x377A2
+#incbin "nop4byte.bin"
+ORG 0x39AF4
+#incbin "nop4byte.bin"
+
+POP
+

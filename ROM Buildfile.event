@@ -1,0 +1,61 @@
+#ifdef _FE8_
+
+	// PROTECT $CDF00 $CE000
+
+	#include "EAstdlib.event"
+	#include "Custom Definitions.event"
+
+	ORG FreeSpace // 0x1000000
+	
+	// #include "Tools/Tool Helpers.txt"
+	MESSAGE Tool Helpers at CURRENTOFFSET
+	// #include "Extensions/Hack Installation.txt"
+
+	// #include "Custom Definitions.event"
+
+	// Install text first for Text ID definitions
+	ALIGN 16
+	#include "Text/SkillSys/repointedTextTable.event"
+	#include "Text/SkillSys/InstallTextData.event"
+	#include "Text/Install Text Data.event"
+	MESSAGE Text ends at CURRENTOFFSET// used space ends at currentOffset
+
+	// Install CSV tables
+	ALIGN 16
+	#include "Tables/Table Installer.event"
+	MESSAGE Tables Installed // used space ends at currentOffset
+
+	// Install ASM and other assorted hacks
+	ALIGN 16
+	#include "EngineHacks/SkillSys/_MasterHackInstaller.event"
+	#include "EngineHacks/MasterHackInstaller.event"	
+	MESSAGE ASM Installed // used space ends at currentOffset
+
+	// Install music 
+	// ALIGN 16
+	// #include "Music/_Master Music Installer.event"
+	// MESSAGE Music Installed // used space ends at currentOffset
+
+	// Install events
+	ALIGN 16
+	#include "Events/Master Events Installer.event"
+	MESSAGE Events Installed // used space ends at currentOffset
+
+	// Install maps
+	ALIGN 16
+	#include "Maps/Master Map Installer.event"
+	#include "Maps/TilesetChanges/Tileset Installer.event"
+	MESSAGE Maps and Tilesets Installed // used space ends at currentOffset
+
+	// Install graphics
+	ALIGN 16
+	#include "Images/Graphics/Graphics Installer.event"
+	MESSAGE Graphics Installed // used space ends at currentOffset
+
+	ALIGN 16
+	WORD 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0
+	
+	MESSAGE ROM Ends at CURRENTOFFSET
+#else
+	ERROR You are not assembling for FE8!
+#endif
