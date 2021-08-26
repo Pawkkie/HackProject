@@ -1,1 +1,0 @@
-start "" "D:\Kyle\FireEmblemHack\mGBA\mGBA-0.9.2-win64\mGBA.exe" "D:\Kyle\FireEmblemHack\HackProject\ROMs\FE8_hack.gba"
