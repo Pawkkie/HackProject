@@ -21,7 +21,11 @@
 
 // Item definitions
 #define Dealbreaker 0xBD
+#define SpiritDust 0xBE
+
+// Icon definitions
 #define DealbreakerIcon 0xE0
+#define SpiritDustIcon 0xE1
 
 
 // Class definitions

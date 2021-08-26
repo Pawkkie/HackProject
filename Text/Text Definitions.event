@@ -54,7 +54,12 @@
 #define BWLRText $EC2
 #define DealbreakerName $EC3
 #define DealbreakerDesc $EC4
+#define SpiritDustName $EC5
+#define SpiritDustDesc $EC6
+#define SpiritDustUseScreen $EC7
 #define Explorer $D63
 #define NomadicTrooperDesc $319
+#define EnergyRingDesc $484
+#define EnergyRingUseScreen $4C2
 
 #endif // TEXT_DEFINITIONS_TEXTBUILDFILE_TXT

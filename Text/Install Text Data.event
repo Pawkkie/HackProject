@@ -209,6 +209,18 @@ __TEXTPROCESSEC4:
 #incext ParseFile ".TextEntries\TextBuildfileDealbreakerDesc.fetxt"
 setText($EC4, __TEXTPROCESSEC4)
 
+__TEXTPROCESSEC5:
+#incext ParseFile ".TextEntries\TextBuildfileSpiritDustName.fetxt"
+setText($EC5, __TEXTPROCESSEC5)
+
+__TEXTPROCESSEC6:
+#incext ParseFile ".TextEntries\TextBuildfileSpiritDustDesc.fetxt"
+setText($EC6, __TEXTPROCESSEC6)
+
+__TEXTPROCESSEC7:
+#incext ParseFile ".TextEntries\TextBuildfileSpiritDustUseScreen.fetxt"
+setText($EC7, __TEXTPROCESSEC7)
+
 __TEXTPROCESSD63:
 #incext ParseFile ".TextEntries\TextBuildfileExplorer.fetxt"
 setText($D63, __TEXTPROCESSD63)
@@ -216,6 +228,14 @@ setText($D63, __TEXTPROCESSD63)
 __TEXTPROCESS319:
 #incext ParseFile ".TextEntries\TextBuildfileNomadicTrooperDesc.fetxt"
 setText($319, __TEXTPROCESS319)
+
+__TEXTPROCESS484:
+#incext ParseFile ".TextEntries\TextBuildfileEnergyRingDesc.fetxt"
+setText($484, __TEXTPROCESS484)
+
+__TEXTPROCESS4C2:
+#incext ParseFile ".TextEntries\TextBuildfileEnergyRingUseScreen.fetxt"
+setText($4C2, __TEXTPROCESS4C2)
 
 }
 

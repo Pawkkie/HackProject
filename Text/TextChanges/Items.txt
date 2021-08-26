@@ -3,3 +3,13 @@ Dealbreaker[X]
 
 ## DealbreakerDesc *
 [Lock]Romina. Eff. vs armour and cavalry. Cuts deals.[X]
+
+## SpiritDustName
+Spirit Dust[X]
+
+## SpiritDustDesc
+Increases Mag by 2 points.[NL]
+Vanishes after use.[X]
+
+## SpiritDustUseScreen
+Raises magic.[X]

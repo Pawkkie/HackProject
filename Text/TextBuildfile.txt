@@ -15,5 +15,11 @@ terrain costs 1 movement.[X]
 Fighters skilled in both sword and bow.[NL]
 Equip: Swords, bows.[X]
 
+# 0x484 EnergyRingDesc
+Increases Str by 2 points.[NL]
+Vanishes after use.[X]
+
+# 0x4c2 EnergyRingUseScreen
+Raises strength.[X]
 
 

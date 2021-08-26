@@ -51,7 +51,7 @@ ENDTRAP
 ALIGN 4
 
 Units:
-UNIT Romi EirikaLord Eirika Level(1,Ally,False) [4,12] 0x0 0x0 0x0 0x1 [Dealbreaker,IronAxe,Vulnerary] NoAI
+UNIT Romi EirikaLord Eirika Level(1,Ally,False) [4,12] 0x0 0x0 0x0 0x1 [Dealbreaker,SpiritDust,IronAxe,EnergyRing] NoAI
 UNIT Ruby LanceKnight Eirika Level(1,Ally,False) [2,10] 0x0 0x0 0x0 0x1 [IronLance,Vulnerary] NoAI
 UNIT Ella ThiefF Eirika Level(1,Ally,False) [2,11] 0x0 0x0 0x0 0x1 [IronSword,Lockpick] NoAI
 UNIT Ursula Cleric Eirika Level(1,Ally,False) [3,10] 0x0 0x0 0x0 0x1 [Heal,Vulnerary] NoAI
