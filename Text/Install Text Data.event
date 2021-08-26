@@ -202,24 +202,28 @@ __TEXTPROCESSEC2:
 setText($EC2, __TEXTPROCESSEC2)
 
 __TEXTPROCESSEC3:
-#incext ParseFile ".TextEntries\TextBuildfileDealbreakerName.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfilePlaceholder.fetxt"
 setText($EC3, __TEXTPROCESSEC3)
 
 __TEXTPROCESSEC4:
-#incext ParseFile ".TextEntries\TextBuildfileDealbreakerDesc.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileDealbreakerName.fetxt"
 setText($EC4, __TEXTPROCESSEC4)
 
 __TEXTPROCESSEC5:
-#incext ParseFile ".TextEntries\TextBuildfileSpiritDustName.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileDealbreakerDesc.fetxt"
 setText($EC5, __TEXTPROCESSEC5)
 
 __TEXTPROCESSEC6:
-#incext ParseFile ".TextEntries\TextBuildfileSpiritDustDesc.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileSpiritDustName.fetxt"
 setText($EC6, __TEXTPROCESSEC6)
 
 __TEXTPROCESSEC7:
-#incext ParseFile ".TextEntries\TextBuildfileSpiritDustUseScreen.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileSpiritDustDesc.fetxt"
 setText($EC7, __TEXTPROCESSEC7)
+
+__TEXTPROCESSEC8:
+#incext ParseFile ".TextEntries\TextBuildfileSpiritDustUseScreen.fetxt"
+setText($EC8, __TEXTPROCESSEC8)
 
 __TEXTPROCESSD63:
 #incext ParseFile ".TextEntries\TextBuildfileExplorer.fetxt"

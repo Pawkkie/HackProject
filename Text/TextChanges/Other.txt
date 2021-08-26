@@ -1,3 +1,7 @@
 ## BWLRText
 Unit's battles, wins, and losses.[NL]
 Cumulative across entire playthrough.[X]
+
+## Placeholder
+[OpenRight][LoadCurrent]
+Placeholder![A][X]

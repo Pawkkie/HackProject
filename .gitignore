@@ -13,16 +13,18 @@ FEBuilder.cmd
 FEBuilderClean.cmd
 MAKE HACK_full_vba.cmd
 MAKE HACK_quick_vba.cmd
+MAKE HACK_full_mgba.cmd
+MAKE HACK_quick_mgba.cmd
 vba.cmd
 vbaClean.cmd
+mGBA.cmd
 Workflows/
 Music/
 ROMs/
-Images/
 Graphics/
 EngineHacks/PAWKKIE/Testing
 Notes/
 VeslyAutoDmpExamples/
-Images/
 Tools/
 EventAssembler/
+Images/

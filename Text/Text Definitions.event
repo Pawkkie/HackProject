@@ -52,11 +52,12 @@
 #define KilvonsoName $EC0
 #define KilvonsoDesc $EC1
 #define BWLRText $EC2
-#define DealbreakerName $EC3
-#define DealbreakerDesc $EC4
-#define SpiritDustName $EC5
-#define SpiritDustDesc $EC6
-#define SpiritDustUseScreen $EC7
+#define Placeholder $EC3
+#define DealbreakerName $EC4
+#define DealbreakerDesc $EC5
+#define SpiritDustName $EC6
+#define SpiritDustDesc $EC7
+#define SpiritDustUseScreen $EC8
 #define Explorer $D63
 #define NomadicTrooperDesc $319
 #define EnergyRingDesc $484

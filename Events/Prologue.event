@@ -24,11 +24,24 @@ SupportConvo(CSupport,Ruby,Franz,Ch1Village)
 END_MAIN
 
 LocationBasedEvents: //really more "map objects" such as shops/ houses/ etc.
-Village(0xA,VillageEnergyRing,15,12)
+Village(0xA,UpperLeftVillage,5,2)
+Village(0xB,LowerRightVillage,19,13)
+House(0xC,UpperLeftHouse,3,6)
+Chest(SilverLance,12,4)
 END_MAIN
 
-VillageEnergyRing:
-VillageEventItem(Ch1Village, Village, WhiteGem)
+UpperLeftVillage:
+VillageEventItem(Placeholder, HouseBG, WhiteGem)
+ENDA
+
+LowerRightVillage:
+VillageEventItem(Placeholder, HouseBG, EnergyRing)
+ENDA
+
+UpperLeftHouse:
+SetBackground(HouseBG)
+Text(Placeholder)
+CALL $9EE2C4
 ENDA
 
 MiscBasedEvents:
