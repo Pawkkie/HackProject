@@ -20,7 +20,7 @@
 #define Kilvonso 0x7
 
 // Item definitions
-#define Dealbreaker 0xCE
+#define Dealbreaker 0xBD
 #define DealbreakerIcon 0xE0
 
 
