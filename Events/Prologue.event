@@ -26,22 +26,32 @@ END_MAIN
 LocationBasedEvents: //really more "map objects" such as shops/ houses/ etc.
 Village(0xA,UpperLeftVillage,5,2)
 Village(0xB,LowerRightVillage,19,13)
-House(0xC,UpperLeftHouse,3,6)
+House(0x00,UpperLeftHouse,3,6)
 Chest(SilverLance,12,4)
 END_MAIN
 
 UpperLeftVillage:
+MUSI
 VillageEventItem(Placeholder, HouseBG, WhiteGem)
+MUNO
+NoFade
 ENDA
 
 LowerRightVillage:
+MUSI
 VillageEventItem(Placeholder, HouseBG, EnergyRing)
+MUNO
+NoFade
 ENDA
 
 UpperLeftHouse:
+MUSI
 SetBackground(HouseBG)
 Text(Placeholder)
-CALL $9EE2C4
+EndConvo
+TILECHANGE 0x1
+MUNO
+NoFade
 ENDA
 
 MiscBasedEvents:
@@ -64,11 +74,11 @@ ENDTRAP
 ALIGN 4
 
 Units:
-UNIT Romi EirikaLord Eirika Level(1,Ally,False) [4,12] 0x0 0x0 0x0 0x1 [Dealbreaker,SpiritDust,IronAxe,EnergyRing] NoAI
-UNIT Ruby LanceKnight Eirika Level(1,Ally,False) [2,10] 0x0 0x0 0x0 0x1 [IronLance,Vulnerary] NoAI
-UNIT Ella ThiefF Eirika Level(1,Ally,False) [2,11] 0x0 0x0 0x0 0x1 [IronSword,Lockpick] NoAI
+UNIT Romi EirikaLord Eirika Level(1,Ally,False) [4,12] 0x0 0x0 0x0 0x1 [Dealbreaker,IronAxe] NoAI
+UNIT Ruby LanceKnight Eirika Level(1,Ally,False) [2,10] 0x0 0x0 0x0 0x1 [IronLance,BagOfHolding,Vulnerary] NoAI
+UNIT Ella ThiefF Eirika Level(1,Ally,False) [2,11] 0x0 0x0 0x0 0x1 [IronSword,WoodenShield,Lockpick] NoAI
 UNIT Ursula Cleric Eirika Level(1,Ally,False) [3,10] 0x0 0x0 0x0 0x1 [Heal,Vulnerary] NoAI
-UNIT Rainer Nomad Eirika Level(4,Ally,False) [2,12] 0x0 0x0 0x0 0x1 [IronBow,SteelBow] NoAI
+UNIT Rayleigh Archer Eirika Level(1,Ally,False) [2,12] 0x0 0x0 0x0 0x1 [IronBow,Vulnerary] NoAI
 UNIT Kilvonso Monk Eirika Level(1,Ally,False) [3,12] 0x0 0x0 0x0 0x1 [Lightning] NoAI
 UNIT
 

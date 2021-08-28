@@ -33,3 +33,4 @@
 #include "TextEngineRework/_FE8-Text_Engine_Rework_EA.event"
 #include "PAWKKIE/SeparateUnitBases/SeparateUnitBasesInstaller.event"
 #include "ExtendItemIconList.txt"
+#include "MagBy3/Installer.event"

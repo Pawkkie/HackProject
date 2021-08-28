@@ -13,3 +13,23 @@ Vanishes after use.[X]
 
 ## SpiritDustUseScreen
 Raises magic.[X]
+
+## BagOfHoldingName ^
+Bag of Holding[X]
+
+## BagOfHoldingDesc 
+Its infinite depths grant[NL]
+access to convoy storage.[X]
+
+## BagOfHoldingUseScreen
+Grants convoy access.[X]
+
+## WoodenShieldName
+Wooden Shield[X]
+
+## WoodenShieldDesc
+A smartly crafted plank of[NL]
+wood. Gives +1 Def.[X]
+
+## WoodenShieldUseScreen
+Grants +1 Def.[X]

@@ -42,18 +42,23 @@
 //Weapon Ability 3 definitions:
 #define CannotUse 0x1
 #define NegateDef 0x2
-#ifdef _FE8_
-  #define EirikaLock 0x4
-  #define EphraimLock 0x8
-  #define WeaponLock3 0x10
-  #define WeaponLock4 0x20
-#endif
-#ifdef _FE7_
-  #define EliwoodLock 0x4
-  #define HectorLock 0x8
-  #define LynLock 0x10
-  #define AthosLock 0x20
-#endif
+#define EirikaLock 0x4
+#define EphraimLock 0x8
+#define WeaponLock3 0x10
+#define WeaponLock4 0x20
+#define IsAccessory 0x40
+#define PassiveBoosts 0x80 // These use the same def... 
+// Best not use the one below 
+// #define Accessory_DepleteUsesOnDefense 0x80
+
+// Weapon Effect
+#define NoEffect 0x0
+#define PoisonEffect 0x1
+#define NosferatuEffect 0x2
+#define EclipseEffect 0x3
+#define DevilEffect 0x4
+#define StoneEffect 0x5
+#define CannotDoubleEffect 0xC
 
 //Weapon Ability 4 definitions
 #define CannotDoubleEffect 0xC

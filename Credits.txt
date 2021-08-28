@@ -29,6 +29,7 @@ statscreen - SaXoR
 
 Items:
 Dealbreaker - Beannmond
+BagOfHolding - Cardcafe
 
 Battle Anims:
 Assassin - Glenwing, Andy, SD9K
@@ -156,6 +157,7 @@ LimitlessTrading - aera
 TextEngineRework - Tequila
 StatPortraitFix - Stan
 Extend item icon list - aera
+Mag/3 - Pikmin
 
 Open Source:
 - Clendo

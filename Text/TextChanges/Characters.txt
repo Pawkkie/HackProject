@@ -41,3 +41,9 @@ Von Kilvonso[X]
 
 ## KilvonsoDesc
 Kilvonso Desc[X]
+
+## RayleighName
+Rayleigh[X]
+
+## RayleighDesc
+Rayleigh Desc[X]

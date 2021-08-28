@@ -198,32 +198,64 @@ __TEXTPROCESSEC1:
 setText($EC1, __TEXTPROCESSEC1)
 
 __TEXTPROCESSEC2:
-#incext ParseFile ".TextEntries\TextBuildfileBWLRText.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileRayleighName.fetxt"
 setText($EC2, __TEXTPROCESSEC2)
 
 __TEXTPROCESSEC3:
-#incext ParseFile ".TextEntries\TextBuildfilePlaceholder.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileRayleighDesc.fetxt"
 setText($EC3, __TEXTPROCESSEC3)
 
 __TEXTPROCESSEC4:
-#incext ParseFile ".TextEntries\TextBuildfileDealbreakerName.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileBWLRText.fetxt"
 setText($EC4, __TEXTPROCESSEC4)
 
 __TEXTPROCESSEC5:
-#incext ParseFile ".TextEntries\TextBuildfileDealbreakerDesc.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfilePlaceholder.fetxt"
 setText($EC5, __TEXTPROCESSEC5)
 
 __TEXTPROCESSEC6:
-#incext ParseFile ".TextEntries\TextBuildfileSpiritDustName.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileDealbreakerName.fetxt"
 setText($EC6, __TEXTPROCESSEC6)
 
 __TEXTPROCESSEC7:
-#incext ParseFile ".TextEntries\TextBuildfileSpiritDustDesc.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileDealbreakerDesc.fetxt"
 setText($EC7, __TEXTPROCESSEC7)
 
 __TEXTPROCESSEC8:
-#incext ParseFile ".TextEntries\TextBuildfileSpiritDustUseScreen.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileSpiritDustName.fetxt"
 setText($EC8, __TEXTPROCESSEC8)
+
+__TEXTPROCESSEC9:
+#incext ParseFile ".TextEntries\TextBuildfileSpiritDustDesc.fetxt"
+setText($EC9, __TEXTPROCESSEC9)
+
+__TEXTPROCESSECA:
+#incext ParseFile ".TextEntries\TextBuildfileSpiritDustUseScreen.fetxt"
+setText($ECA, __TEXTPROCESSECA)
+
+__TEXTPROCESSECB:
+#incext ParseFile ".TextEntries\TextBuildfileBagOfHoldingName.fetxt"
+setText($ECB, __TEXTPROCESSECB)
+
+__TEXTPROCESSECC:
+#incext ParseFile ".TextEntries\TextBuildfileBagOfHoldingDesc.fetxt"
+setText($ECC, __TEXTPROCESSECC)
+
+__TEXTPROCESSECD:
+#incext ParseFile ".TextEntries\TextBuildfileBagOfHoldingUseScreen.fetxt"
+setText($ECD, __TEXTPROCESSECD)
+
+__TEXTPROCESSECE:
+#incext ParseFile ".TextEntries\TextBuildfileWoodenShieldName.fetxt"
+setText($ECE, __TEXTPROCESSECE)
+
+__TEXTPROCESSECF:
+#incext ParseFile ".TextEntries\TextBuildfileWoodenShieldDesc.fetxt"
+setText($ECF, __TEXTPROCESSECF)
+
+__TEXTPROCESSED0:
+#incext ParseFile ".TextEntries\TextBuildfileWoodenShieldUseScreen.fetxt"
+setText($ED0, __TEXTPROCESSED0)
 
 __TEXTPROCESSD63:
 #incext ParseFile ".TextEntries\TextBuildfileExplorer.fetxt"

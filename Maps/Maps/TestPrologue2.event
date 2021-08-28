@@ -19,14 +19,14 @@ SHORT 0x7c
 ALIGN 4
 
 UpperLeftHouseClosed:
-SHORT 0x7c 0xfc 
+SHORT 0xfc 
 ALIGN 4
 
 LowerRightVillageClosed:
-SHORT 0x7c 0xfc 0x7c 
+SHORT 0x7c 
 ALIGN 4
 
 ChestOpen:
-SHORT 0x7c 0x100 0xfc 
+SHORT 0x100 
 ALIGN 4
 

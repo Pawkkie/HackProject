@@ -27,14 +27,14 @@ POP*/
 ALIGN 4
 
 
-#ifdef INSTALL_ACCESSORIES
+// #ifdef INSTALL_ACCESSORIES
 #include "asm/Accessories.lyn.event"
-#endif 
-//MESSAGE Arcana Shield at ComputeArcanaShieldAttackReduction
+// #endif 
+// MESSAGE Arcana Shield at ComputeArcanaShieldAttackReduction
 
 ALIGN 4
 CannotEquipAccessoryText:
-SHORT 0x0E93
+SHORT 0x0E93 // redefine this later, was CannotEquipAccessoryTextID
 
 PUSH
 ORG $59D120
@@ -76,7 +76,7 @@ BYTE ArmorClasses 0 // ArmorClasses defined in Master Skill Installer
 
 ALIGN 4
 ClassListEquip:
-BYTE 0 //BulbasaurID RattataID 0
+BYTE 0 LanceKnight 0 //BulbasaurID RattataID 0
 
 ALIGN 4
 #define MagicClasses "Mage Mage_F Sage Sage_F MageKnight MageKnight_F Priest Cleric Bishop Bishop_F Troubadour Monk"
@@ -119,20 +119,20 @@ ENDA
 //MESSAGE Give Unit Exp ASMC_GiveUnitExp
 
 ALIGN 4
-// AE_ExpShareID:
-// BYTE AE_ExpShare
+AE_ExpShareID:
+BYTE AE_ExpShare
 
 ALIGN 4
-// AE_PursuitRingID:
-// BYTE AE_PursuitRing
+AE_PursuitRingID:
+BYTE AE_PursuitRing
 
 ALIGN 4
-// AE_ArcanaShieldID:
-// BYTE AE_ArcanaShield
+AE_ArcanaShieldID:
+BYTE AE_ArcanaShield
 
 ALIGN 4
-// AE_WhetstoneID:
-// BYTE AE_Whetstone
+AE_WhetstoneID:
+BYTE AE_Whetstone
 
 ALIGN 4
 AE_AngelRingID:

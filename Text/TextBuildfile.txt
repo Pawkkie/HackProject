@@ -3,7 +3,7 @@ StartHere[X]
 
 #include "TextChanges/Classes.txt"
 #include "TextChanges/Chapter1.txt"
-#include "TextChanges/Names.txt"
+#include "TextChanges/Characters.txt"
 #include "TextChanges/Other.txt"
 #include "TextChanges/Items.txt"
 

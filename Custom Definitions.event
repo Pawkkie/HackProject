@@ -4,7 +4,10 @@
 // Idk why this needs to be here but it does
 #define Item 0x9
 #define Spears 0x1
+
+// Important general defs
 #define IsPointer 0x08000000
+#define EndConvo "CALL $9EE2C4"
 
 // Repointing class table
 #define ClassTable NewClassTable
@@ -18,15 +21,18 @@
 #define Arla 0x5
 #define Ursula 0x6
 #define Kilvonso 0x7
+#define Rayleigh 0x8
 
 // Item definitions
 #define Dealbreaker 0xBD
 #define SpiritDust 0xBE
+#define BagOfHolding 0xBF
+#define WoodenShield 0xC0
 
 // Icon definitions
 #define DealbreakerIcon 0xE0
 #define SpiritDustIcon 0xE1
-
+#define BagOfHoldingIcon 0xE2
 
 // Class definitions
 #define Nomad 0x80
