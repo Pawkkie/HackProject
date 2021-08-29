@@ -24,7 +24,7 @@ access to convoy storage.[X]
 ## BagOfHoldingUseScreen
 Grants convoy access.[X]
 
-## WoodenShieldName
+## WoodenShieldName ^
 Wooden Shield[X]
 
 ## WoodenShieldDesc

@@ -37,7 +37,7 @@ Rainer[X]
 Rainer Desc[X]
 
 ## KilvonsoName ^
-Von Kilvonso[X]
+VonKilvonso[X]
 
 ## KilvonsoDesc
 Kilvonso Desc[X]
