@@ -36,9 +36,9 @@
 GetConvoyPartitionEntry:
 .if Get_Partition_From_Chapter_Data_Table == 1
 	push	{r14}
-	ldr		r0,=#0x202BCF0		@ gChapterData
+	ldr		r0,=0x202BCF0		@ gChapterData
 	ldrb	r0,[r0,#0xE]
-	ldr		r3,=#0x8034618		@ GetChapterDefinition
+	ldr		r3,=0x8034618		@ GetChapterDefinition
 	mov		r14,r3
 	.short	0xF800
 	add		r0,#0x3D			@ unused byte between tactics ranking and experience ranking
@@ -130,7 +130,7 @@ AddItemToConvoy:
 @ r0 = item/uses to store
 push	{r4-r7,r14}
 mov		r4,r0
-ldr		r5,=#0x202BCB0		@ gGameState
+ldr		r5,=0x202BCB0		@ gGameState
 mov		r0,#0
 strh	r0,[r5,#0x2E]
 bl		GetConvoyPartitionStartOffset
@@ -165,7 +165,7 @@ bx		r1
 GetConvoyItemSlot:		@ used to check if member's card is in convoy
 @ r0=item id/uses
 push	{r4-r5,r14}
-ldr		r3,=#0x80174EC	@ GetItemIndex
+ldr		r3,=0x80174EC	@ GetItemIndex
 mov		r14,r3
 .short	0xF800
 mov		r4,r0
@@ -212,7 +212,7 @@ lsl		r2,#0x18
 orr		r2,r0			@ should make 0x10000XX
 mov		r1,r4
 mov		r0,r13
-ldr		r3,=#0x80D1678	@ CpuSet
+ldr		r3,=0x80D1678	@ CpuSet
 mov		r14,r3
 .short	0xF800
 add		sp,#4
@@ -266,7 +266,7 @@ mov		r2,r0
 mov		r0,r6
 add		r0,#0x12
 mov		r1,#2
-ldr		r3,=#0x8004B88	@ DrawUiNumber
+ldr		r3,=0x8004B88	@ DrawUiNumber
 mov		r14,r3
 .short	0xF800
 mov		r0,#1
@@ -285,7 +285,7 @@ mov		r0,#0x1C
 strb	r0,[r1,#0x11]
 cmp		r4,#0
 beq		RetOne1		@ no inventory space left
-ldr		r3,=#0x8097CC8		@ GetConvoyItemCount wrapper
+ldr		r3,=0x8097CC8		@ GetConvoyItemCount wrapper
 mov		r14,r3
 .short	0xF800
 mov		r5,r0
@@ -314,10 +314,10 @@ bl		GetConvoyPartitionSize
 ldrb	r1,[r5]
 cmp		r1,r0
 bge		ConvoyAccessDenied
-ldr		r0,=#0x859D0D0
+ldr		r0,=0x859D0D0
 b		End_Hook_1DFAC
 ConvoyAccessDenied:
-ldr		r0,=#0x859D0AC
+ldr		r0,=0x859D0AC
 End_Hook_1DFAC:
 pop		{r1}
 bx		r1
@@ -347,15 +347,15 @@ bx		r1
 .align
 Hook_1E0E8:			@ HandleNewItemGet
 push	{r4}
-ldr		r3,=#0x8031570	@ GetConvoyItemCount
+ldr		r3,=0x8031570	@ GetConvoyItemCount
 mov		r14,r3
 .short	0xF800
 mov		r4,r0
 bl		GetConvoyPartitionSize
-ldr		r1,=#0x801E10D
+ldr		r1,=0x801E10D
 cmp		r4,r0
 bge		End_Hook_1E0E8
-ldr		r1,=#0x801E0F1
+ldr		r1,=0x801E0F1
 End_Hook_1E0E8:
 pop		{r4}
 bx		r1
@@ -405,7 +405,7 @@ Loop_9A550:
 ldr		r0,[sp]
 cmp		r6,r0
 bge		End_Loop_9A550	@ convoy is full
-ldr		r0,=#0x858791C		@ gKeyStatus
+ldr		r0,=0x858791C		@ gKeyStatus
 ldr		r0,[r0]
 ldrh	r0,[r0,#4]
 mov		r1,#2
@@ -419,13 +419,42 @@ beq		RemoveItem1
 strh	r0,[r5,#0x1E]
 AddItem1:
 ldrh	r0,[r5,#0x1E]
-ldr		r3,=#0x8031594	@ AddItemToConvoy
+
+
+@ Vesly this is where I've pasted our stuff
+@ item to add to convoy in r0
+mov r2, #0xC0 @ 0x40|0x80 forged / equipped? (forgable items is disabled anyway)
+lsl r2, #8 
+
+@ Check if itemID stored at the address in r4 has the "IsAccsesory" weapon ability, and if it does, unequip it before trading
+push {r1-r3}
+ldr r3, =ItemTable
+ldrb r2,[r5,#0x1E] @ itemID
+mov r1, #0x24 @ width of item table
+mul r2, r1 @ multiply itemID by width of table
+add r2, #0xA @ offset to the column for Weapon Ability 3, which can contain IsAccessory (0x40)
+ldrb r2, [r3,r2] @ Get value in weapon ability 3
+mov r3, #0x40 @ Setup to compare WA3 with IsAccessory
+and r3, r2
+mov r1, #0x0
+cmp r3, r1
+beq NotAccessory1 @ if NOT = 0, go to NotAccessory1
+pop {r1-r3}
+bic r0, r2 @ remove top 2 bits of durability, i think 
+b CheckAcc1End
+NotAccessory1:
+pop {r1-r3}
+CheckAcc1End:
+
+
+
+ldr		r3,=0x8031594	@ AddItemToConvoy
 mov		r14,r3
 .short	0xF800
 RemoveItem1:
 mov		r0,r5
 mov		r1,#0
-ldr		r3,=#0x8019484	@ RemoveUnitItem
+ldr		r3,=0x8019484	@ RemoveUnitItem
 mov		r14,r3
 .short	0xF800
 add		r6,#1
@@ -451,12 +480,41 @@ ldr		r0,[sp]
 cmp		r6,r0
 bge		End_Loop_9A550_2	@ convoy is full
 ldrh	r0,[r5,#0x1E]
-ldr		r3,=#0x8031594	@ AddItemToConvoy
+
+
+@ Vesly this is the other place where I've pasted our stuff
+@ item to add to convoy in r0
+mov r2, #0xC0 @ 0x40|0x80 forged / equipped? (forgable items is disabled anyway)
+lsl r2, #8 
+
+@ Check if itemID stored at the address in r4 has the "IsAccsesory" weapon ability, and if it does, unequip it before trading
+push {r1-r3}
+ldr r3, =ItemTable
+ldrb r2,[r5,#0x1E] @ itemID
+mov r1, #0x24 @ width of item table
+mul r2, r1 @ multiply itemID by width of table
+add r2, #0xA @ offset to the column for Weapon Ability 3, which can contain IsAccessory (0x40)
+ldrb r2, [r3,r2] @ Get value in weapon ability 3
+mov r3, #0x40 @ Setup to compare WA3 with IsAccessory
+and r3, r2
+mov r1, #0x0
+cmp r3, r1
+beq NotAccessory2 @ if NOT = 0, go to NotAccessory1
+pop {r1-r3}
+bic r0, r2 @ remove top 2 bits of durability, i think 
+b CheckAcc2End
+NotAccessory2:
+pop {r1-r3}
+CheckAcc2End:
+
+
+
+ldr		r3,=0x8031594	@ AddItemToConvoy
 mov		r14,r3
 .short	0xF800
 mov		r0,r5
 mov		r1,#0
-ldr		r3,=#0x8019484	@ RemoveUnitItem
+ldr		r3,=0x8019484	@ RemoveUnitItem
 mov		r14,r3
 .short	0xF800
 add		r6,#1
@@ -473,7 +531,7 @@ bx		r0
 .align
 Hook_9DD08:				@ when selecting Give
 push	{r4}
-ldr		r3,=#0x8097CC8	@ GetConvoyItemCount wrapper
+ldr		r3,=0x8097CC8	@ GetConvoyItemCount wrapper
 mov		r14,r3
 .short	0xF800
 mov		r4,r0
@@ -485,7 +543,7 @@ mov		r1,#1
 End_Hook_9DD08:
 mov		r0,r1
 pop		{r4}
-ldr		r1,=#0x809DD11
+ldr		r1,=0x809DD11
 bx		r1
 .ltorg
 
@@ -495,7 +553,7 @@ bx		r1
 Hook_B4730:				@ probably related to transferring bonus items
 push	{r4-r5,r14}
 mov		r4,r0
-ldr		r3,=#0x8031570	@ GetConvoyItemCount
+ldr		r3,=0x8031570	@ GetConvoyItemCount
 mov		r14,r3
 .short	0xF800
 mov		r5,r0
@@ -504,7 +562,7 @@ cmp		r5,r0
 bge		End_Hook_B4730
 mov		r0,r4
 mov		r1,#0xA
-ldr		r3,=#0x8002F24	@ GoToProcLable
+ldr		r3,=0x8002F24	@ GoToProcLable
 mov		r14,r3
 .short	0xF800
 End_Hook_B4730:
@@ -520,11 +578,11 @@ bx		r0
 Hook_9EAD8:            @ Store unit's data in Active Unit even if accessing from prep screen
 push     {r4, lr}
 mov     r4, r0
-ldr     r0, =#0x8A1920C @ convoy proc
-ldr    r3, =#0x8002CE0    @ NewBlocking6C
+ldr     r0, =0x8A1920C @ convoy proc
+ldr    r3, =0x8002CE0    @ NewBlocking6C
 mov    r14, r3
 .short    0xF800
-ldr    r1, =#0x3004E50 @ gActiveUnit
+ldr    r1, =0x3004E50 @ gActiveUnit
 str     r4, [r1]
 str    r4, [r0, #0x2C]
 add    r0, #0x30
@@ -545,7 +603,7 @@ lsl		r0,#2
 add		r0,r4
 ldrh	r4,[r0,#2]			@ item id/uses from PrepScreenList
 mov		r5,r1				@ place in char struct to store item
-ldr		r0,=#0x858791C		@ gKeyStatus
+ldr		r0,=0x858791C		@ gKeyStatus
 ldr		r0,[r0]
 ldrh	r0,[r0,#4]
 mov		r1,#2
@@ -553,7 +611,7 @@ lsl		r1,#8				@ 0x200, L button
 tst		r0,r1
 beq		End_CombineWhenTaking
 mov		r0,r4
-ldr		r3,=#0x80175B0		@ GetItemMaxUses
+ldr		r3,=0x80175B0		@ GetItemMaxUses
 mov		r14,r3
 .short	0xF800
 cmp		r0,#0xFF
@@ -605,7 +663,7 @@ CombineWhenGivingOne:		@ called at 9E894
 push	{r14}
 strb	r0,[r6]
 mov		r0,r4
-ldr		r2,=#0x858791C		@ gKeyStatus
+ldr		r2,=0x858791C		@ gKeyStatus
 ldr		r2,[r2]
 ldrh	r2,[r2,#4]
 mov		r1,#2
@@ -616,7 +674,7 @@ bl		TryToCombineInConvoy	@ returns updated item/uses short
 cmp		r0,#0
 beq		ItemWasUsedUp2
 AddOneItemToConvoy:
-ldr		r3,=#0x8031594		@ AddItemToConvoy
+ldr		r3,=0x8031594		@ AddItemToConvoy
 mov		r14,r3
 .short	0xF800
 ItemWasUsedUp2:
@@ -632,7 +690,7 @@ TryToCombineInConvoy:
 @ r0=item id/uses; return the updated id/uses (or 0 if item was used up)
 push	{r4-r7,r14}
 mov		r4,r0
-ldr		r3,=#0x80175B0		@ GetItemMaxUses
+ldr		r3,=0x80175B0		@ GetItemMaxUses
 mov		r14,r3
 .short	0xF800
 cmp		r0,#0xFF
@@ -698,9 +756,9 @@ CombineConvoyPartitionsASMC:
 @ Example: 0x00040201 would copy the contents of partitions 1 and 2 to partition 4. Make sure there's room for both sets!
 push	{r4-r7,r14}
 add		sp,#-4
-ldr		r4,=#0x30004B8		@ gEventSlot
+ldr		r4,=0x30004B8		@ gEventSlot
 ldr		r4,[r4,#4]			@ slot 1
-ldr		r5,=#0x2020188		@ gGenericBuffer
+ldr		r5,=0x2020188		@ gGenericBuffer
 lsl		r0,r4,#0x18
 lsr		r0,#0x18			@ first partition
 ldr		r1,=ConvoyPartitionTable
@@ -774,10 +832,10 @@ mov		r1,r7
 mov		r2,#1
 lsl		r2,#0x18
 add		r2,r6
-ldr		r3,=#0x80D1678		@ CpuSet
+ldr		r3,=0x80D1678		@ CpuSet
 mov		r14,r3
 .short	0xF800
-ldr		r5,=#0x2020188		@ gGenericBuffer
+ldr		r5,=0x2020188		@ gGenericBuffer
 Loop3:
 ldrh	r0,[r5]
 strh	r0,[r7]
@@ -802,26 +860,26 @@ push	{r4-r6,r14}
 mov		r4,r0
 mov		r5,r1
 ldr		r0,=Combine_Image_Graphics
-ldr		r1,=#0x2020188		@ gGenericBuffer
-ldr		r3,=#0x8012F50		@ Decompress
+ldr		r1,=0x2020188		@ gGenericBuffer
+ldr		r3,=0x8012F50		@ Decompress
 mov		r14,r3
 .short	0xF800
-ldr		r0,=#0x2020188		@ gGenericBuffer
-ldr		r3,=#0x8013020		@ CopyTileGfxForObj
+ldr		r0,=0x2020188		@ gGenericBuffer
+ldr		r3,=0x8013020		@ CopyTileGfxForObj
 mov		r14,r3
-ldr		r1,=#(0x6010000 + (0x38<<5))	@ tile number; if this is changed, change baseOAM data too
+ldr		r1,=(0x6010000 + (0x38<<5))	@ tile number; if this is changed, change baseOAM data too
 mov		r2,#8				@ length
 mov		r3,#2				@ height
 .short	0xF800
 ldr		r0,=gProc_DisplayCombine
-ldr		r3,=#0x8002E9C		@ FindProc
+ldr		r3,=0x8002E9C		@ FindProc
 mov		r14,r3
 .short	0xF800
 cmp		r0,#0
 bne		Label20
 ldr		r0,=gProc_DisplayCombine
 mov		r1,r4
-ldr		r3,=#0x8002C7C		@ StartProc
+ldr		r3,=0x8002C7C		@ StartProc
 mov		r14,r3
 .short	0xF800
 Label20:
@@ -845,17 +903,17 @@ add		r1,#0x10
 lsl		r1,#5
 ldr		r0,[r5,#8]			@ palette
 mov		r2,#0x20
-ldr		r3,=#0x8000DB8		@ CopyToPaletteBuffer
+ldr		r3,=0x8000DB8		@ CopyToPaletteBuffer
 mov		r14,r3
 .short	0xF800
 @ delete the old R: Info graphic
-ldr		r0,=#0x8A00B20		@ gProc_8A00B20
-ldr		r3,=#0x8002E9C		@ FindProc
+ldr		r0,=0x8A00B20		@ gProc_8A00B20
+ldr		r3,=0x8002E9C		@ FindProc
 mov		r14,r3
 .short	0xF800
 cmp		r0,#0
 beq		End_StartCombineDisplayProc
-ldr		r3,=#0x8002D6C		@ EndProc (no idea if this is the right one)
+ldr		r3,=0x8002D6C		@ EndProc (no idea if this is the right one)
 mov		r14,r3
 .short	0xF800
 End_StartCombineDisplayProc:
@@ -921,7 +979,7 @@ add		r1,#0x10
 lsl		r1,#5
 ldr		r0,[r5,#8]			@ palette
 mov		r2,#0x20
-ldr		r3,=#0x8000DB8		@ CopyToPaletteBuffer
+ldr		r3,=0x8000DB8		@ CopyToPaletteBuffer
 mov		r14,r3
 .short	0xF800
 Label24:
@@ -931,7 +989,7 @@ ldr		r3,[r5,#4]			@ rom oam data ptr
 ldrb	r0,[r5,#2]
 lsl		r0,#0xC
 str		r0,[sp]				@ base oam2 data
-ldr		r0,=#0x80053E8		@ RegisterObjectSafe
+ldr		r0,=0x80053E8		@ RegisterObjectSafe
 mov		r14,r0
 mov		r0,#0
 .short	0xF800
@@ -948,12 +1006,12 @@ Delete_Proc_DisplayCombine:
 mov		r9,r4
 mov		r4,r0				@ return value; I don't think it actually needs to be saved, but just in case...
 ldr		r0,=gProc_DisplayCombine
-ldr		r3,=#0x8002E9C		@ FindProc
+ldr		r3,=0x8002E9C		@ FindProc
 mov		r14,r3
 .short	0xF800
 cmp		r0,#0
 beq		Label26
-ldr		r3,=#0x8002D6C		@ EndProc (no idea if this is the right one)
+ldr		r3,=0x8002D6C		@ EndProc (no idea if this is the right one)
 mov		r14,r3
 .short	0xF800
 Label26:

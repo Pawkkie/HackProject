@@ -14,7 +14,7 @@
 #include "FillAIDangerMap/FillAIDangerMap.event"
 #include "FogDR/FogDR.event"
 #include "ExtendMapAnimsTable.txt"
-//#include "Convoy_Partition_and_Item_Combining/FE8-Convoy_Stuff_EA.event"
+#include "Convoy_Partition_and_Item_Combining/FE8-Convoy_Stuff_EA.event"
 #include "DoNotClearSupportWhenUnitDies.txt"
 //#include "ConvoyModule/ConvoyStuff.lyn.event"
 #include "PlayerTurnReset.txt"

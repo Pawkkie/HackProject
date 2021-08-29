@@ -1,8 +1,8 @@
 @echo off
 
-SET startDir="C:\devkitPro\devkitARM\bin\"
+SET startDir="D:\Kyle\FireEmblemHack\HackProject\EventAssembler\ASM\devkitARM\bin\"
 SET as="%startDir%arm-none-eabi-as"
-SET LYN="C:\devkitPro\lyn.exe"
+SET LYN="D:\Kyle\FireEmblemHack\HackProject\EventAssembler\ASM\lyn.exe"
 
 @rem Assemble into an elf
 %as% -g -mcpu=arm7tdmi -mthumb-interwork %1 -o "%~n1.elf"

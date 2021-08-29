@@ -18,8 +18,10 @@ mul r2, r1 @ multiply itemID by width of table
 add r2, #0xA @ offset to the column for Weapon Ability 3, which can contain IsAccessory (0x40)
 ldrb r2, [r3,r2] @ Get value in weapon ability 3
 mov r3, #0x40 @ Setup to compare WA3 with IsAccessory
-cmp r2, r3 
-bne NotAccessory1 @ if NOT = 0, go to NotAccessory1
+and r3, r2
+mov r1, #0x0
+cmp r3, r1
+beq NotAccessory1 @ if NOT = 0, go to NotAccessory1
 pop {r1-r3}
 bic r4, r2 @ remove top 2 bits of durability, i think 
 b CheckAcc1End

@@ -158,6 +158,8 @@ TextEngineRework - Tequila
 StatPortraitFix - Stan
 Extend item icon list - aera
 Mag/3 - Pikmin
+Equippable Accessories - Kirb, Vesly
+PreventTrade - Circles, Vesly
 
 Open Source:
 - Clendo
