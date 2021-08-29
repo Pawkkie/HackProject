@@ -5,3 +5,9 @@ Cumulative across entire playthrough.[X]
 ## Placeholder
 [OpenRight][LoadCurrent]
 Placeholder![A][X]
+
+## UnequipText
+Unequip[X]
+
+## CannotEquipAccessoryTextID
+Cannot equip accessory[X]

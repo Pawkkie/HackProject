@@ -34,7 +34,7 @@ ALIGN 4
 
 ALIGN 4
 CannotEquipAccessoryText:
-SHORT 0x0E93 // redefine this later, was CannotEquipAccessoryTextID
+SHORT CannotEquipAccessoryTextID // 0x0E93 // redefine this later, was CannotEquipAccessoryTextID
 
 PUSH
 ORG $59D120
@@ -94,7 +94,7 @@ ItemMenuTable:
 IM_Use
 #ifdef INSTALL_ACCESSORIES
 MenuCommand(0x697, 0, GreenText, EquipAccessoryUsability|1, EquipAccessoryEffect|1)
-// MenuCommand(IM_UnequipAccessory, 0, GreenText, UnequipAccessoryUsability|1, UnequipAccessoryEffect|1)
+MenuCommand(UnequipText, 0, GreenText, UnequipAccessoryUsability|1, UnequipAccessoryEffect|1)
 #endif 
 IM_Equip
 IM_Trade
