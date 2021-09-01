@@ -132,7 +132,7 @@ UNIT 0x80 Thief 0x00 Level(1, Enemy, 1) [17,14] DropItem 0x00 0x0 0x00 [IronSwor
 UNIT
 
 // Escape points
-EscapePointPointerTable(0x7,Ch1EscapePoints)
+EscapePointPointerTable(0x0,Ch1EscapePoints)
 Ch1EscapePoints:
 EscapePoint(17,14,MoveUp)
 EscapePointEnd
