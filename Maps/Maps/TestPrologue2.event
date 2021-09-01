@@ -8,25 +8,25 @@ Map:
 #incbin "TestPrologue2_data.dmp"
 
 MapChanges:
-TileMap(0,5,2,1,1,UpperLeftVillageClosed)
-TileMap(1,3,6,1,1,UpperLeftHouseClosed)
-TileMap(2,19,13,1,1,LowerRightVillageClosed)
-TileMap(3,12,4,1,1,ChestOpen)
+TileMap(0,0,7,1,1,UpperLeftHouseClosed)
+TileMap(1,16,6,1,1,ChestOpen)
+TileMap(2,4,0,3,2,VillageDestroyed)
+TileMap(3,5,1,1,1,UpperLeftVillageClosed)
 TileMapEnd
-
-UpperLeftVillageClosed:
-SHORT 0x7c 
-ALIGN 4
 
 UpperLeftHouseClosed:
 SHORT 0xfc 
 ALIGN 4
 
-LowerRightVillageClosed:
-SHORT 0x7c 
-ALIGN 4
-
 ChestOpen:
 SHORT 0x100 
+ALIGN 4
+
+VillageDestroyed:
+SHORT 0x70 0x74 0x78 0xf0 0xf4 0xf8 
+ALIGN 4
+
+UpperLeftVillageClosed:
+SHORT 0x7c 
 ALIGN 4
 

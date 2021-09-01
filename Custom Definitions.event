@@ -1,5 +1,6 @@
 // External definitions
 #include "EngineHacks/SkillSys/CustomDefinitions.event"
+#include "Events/EventDefs.event"
 
 // Idk why this needs to be here but it does
 #define Item 0x9

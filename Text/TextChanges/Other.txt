@@ -11,3 +11,6 @@ Unequip[X]
 
 ## CannotEquipAccessoryTextID
 Cannot equip accessory[X]
+
+## ShowHealArrow
+->[X]

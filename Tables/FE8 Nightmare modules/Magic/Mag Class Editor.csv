@@ -36,16 +36,16 @@ Wyvern Lord,0,0,21,0
 Wyvern Lord (F),0,0,21,0
 Wyvern Knight,1,5,24,1
 Wyvern Knight (F),1,5,24,1
-Mage,1,55,20,0
-Mage (F),1,55,20,0
+Mage,4,55,20,0
+Mage (F),4,55,20,0
 Sage,5,45,28,1
 Sage (F),4,45,30,1
 Mage Knight,4,40,24,2
 Mage Knight (F),3,40,25,2
 Bishop,4,35,25,2
 Bishop (F),4,35,25,1
-Shaman,2,50,20,0
-Shaman (F),3,45,20,0
+Shaman,5,55,20,0
+Shaman (F),5,55,20,0
 Druid,6,55,29,0
 Druid (F),7,55,29,0
 Summoner,5,50,27,0
@@ -67,14 +67,14 @@ Warrior,0,0,21,0
 Brigand,0,0,20,0
 Pirate,0,0,20,0
 Berserker,0,0,21,0
-Monk,1,30,20,0
-Priest,1,30,20,0
+Monk,4,30,20,0
+Priest,3,30,20,0
 Bard,1,45,20,0
 Recruit (1),0,0,20,0
 Pegasus Knight,1,10,20,0
 Falcon Knight,3,30,23,3
-Cleric,1,30,20,0
-Troubadour,1,25,20,0
+Cleric,3,30,20,0
+Troubadour,3,25,20,0
 Valkyrie,4,35,25,2
 Dancer,1,45,20,0
 Soldier,0,0,20,0

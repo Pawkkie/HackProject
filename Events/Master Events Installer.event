@@ -6,3 +6,4 @@ ALIGN 4
 {
   #include "TestChapter2.event"
 }
+MESSAGE Events end at offset CURRENTOFFSET

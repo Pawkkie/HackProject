@@ -44,7 +44,7 @@ if /I not [%1]==[quick] (
   echo Processing text
 
   cd "%base_dir%Text/SkillSys"
-  echo: | ("%textprocess%" text_buildfile.txt --parser-exe "%parsefile%")
+  echo: | (textprocess-classic-narrow text_buildfile.txt)
   cd "%base_dir%Text"
   echo: | (textprocess-classic-narrow TextBuildfile.txt)
 )

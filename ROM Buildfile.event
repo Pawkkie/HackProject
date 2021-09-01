@@ -16,7 +16,7 @@
 	// Install text first for Text ID definitions
 	ALIGN 16
 	#include "Text/SkillSys/repointedTextTable.event"
-	#include "Text/SkillSys/InstallTextData.event"
+	#include "Text/SkillSys/Install Text Data.event"
 	#include "Text/Install Text Data.event"
 	MESSAGE Text ends at CURRENTOFFSET// used space ends at currentOffset
 

@@ -30,11 +30,9 @@ POP
   ORG $30da6  //Game/text speed Fast, Autocursor off
   SHORT $22d0
   
-//Allow Visit from any tile
-  PUSH
-  ORG $23072
-  SHORT $e00d
-  POP
+//Allow Visit from any tile except Ruins
+//  ORG $23070
+//  SHORT $2826 $D021 $e00c
 
 //Break HP Cap for Players/NPCs (credit Solum)
   // ORG $181ee

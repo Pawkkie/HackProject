@@ -16,6 +16,7 @@ POIN $0 $0 $0 $0 $0 $0
 POIN BeginningScene EndingScene
 
 TurnBasedEvents:
+TurnEventPlayer(0x00,SpawnThief,2)
 END_MAIN
 
 ALIGN 32 //For some reason, CharacterBasedEvents have to be 32-Aligned?
@@ -24,37 +25,14 @@ SupportConvo(CSupport,Ruby,Franz,Ch1Village)
 END_MAIN
 
 LocationBasedEvents: //really more "map objects" such as shops/ houses/ etc.
-Village(0xA,UpperLeftVillage,5,2)
-Village(0xB,LowerRightVillage,19,13)
-House(0x00,UpperLeftHouse,3,6)
-Chest(SilverLance,12,4)
+Village(0xA,UpperLeftVillage,5,1)
+House(0x00,UpperLeftHouse,0,7)
+Chest(BagOfHolding,16,6)
 END_MAIN
 
-UpperLeftVillage:
-MUSI
-VillageEventItem(Placeholder, HouseBG, WhiteGem)
-MUNO
-NoFade
-ENDA
-
-LowerRightVillage:
-MUSI
-VillageEventItem(Placeholder, HouseBG, EnergyRing)
-MUNO
-NoFade
-ENDA
-
-UpperLeftHouse:
-MUSI
-SetBackground(HouseBG)
-Text(Placeholder)
-EndConvo
-TILECHANGE 0x1
-MUNO
-NoFade
-ENDA
 
 MiscBasedEvents:
+// AFEV 0xB VillageDestroyed 0xA
 CauseGameOverIfLordDies //set flag 101/0x65 for other game overs
 DefeatAll(EndingScene)
 END_MAIN
@@ -74,21 +52,33 @@ ENDTRAP
 ALIGN 4
 
 Units:
-UNIT Romi EirikaLord Eirika Level(1,Ally,False) [4,12] 0x0 0x0 0x0 0x1 [Dealbreaker,IronAxe] NoAI
-UNIT Ruby LanceKnight Eirika Level(1,Ally,False) [2,10] 0x0 0x0 0x0 0x1 [IronLance,BagOfHolding,Vulnerary] NoAI
-UNIT Ella ThiefF Eirika Level(1,Ally,False) [2,11] 0x0 0x0 0x0 0x1 [IronSword,WoodenShield,Lockpick] NoAI
-UNIT Ursula Cleric Eirika Level(1,Ally,False) [3,10] 0x0 0x0 0x0 0x1 [Heal,Vulnerary] NoAI
-UNIT Rayleigh Archer Eirika Level(1,Ally,False) [2,12] 0x0 0x0 0x0 0x1 [IronBow,Vulnerary] NoAI
-UNIT Kilvonso Monk Eirika Level(1,Ally,False) [3,12] 0x0 0x0 0x0 0x1 [Lightning] NoAI
+UNIT Romi EirikaLord Eirika Level(1,Ally,False) [3,13] 0x0 0x0 0x0 0x1 [Dealbreaker,Vulnerary] NoAI
+UNIT Ruby LanceKnight Eirika Level(1,Ally,False) [2,12] 0x0 0x0 0x0 0x1 [IronLance,Vulnerary] NoAI
+UNIT Ella ThiefF Eirika Level(1,Ally,False) [1,12] 0x0 0x0 0x0 0x1 [IronSword,Lockpick] NoAI
+UNIT Ursula Cleric Eirika Level(1,Ally,False) [2,13] 0x0 0x0 0x0 0x1 [Heal,Vulnerary] NoAI
+UNIT Rayleigh Archer Eirika Level(1,Ally,False) [3,12] 0x0 0x0 0x0 0x1 [IronBow] NoAI
+UNIT Kilvonso Monk Eirika Level(1,Ally,False) [3,14] 0x0 0x0 0x0 0x1 [Lightning] NoAI
 UNIT
 
 EnemyUnits:
-UNIT 0x80 Nomad 0x00 Level(2, Enemy, 1) [7,9] 0x00 0x00 0x0 0x00 [IronAxe,IronSword] AttackInRangeAI 
-UNIT 0x80 Fighter 0x00 Level(2, Enemy, 1) [9,11] 0x00 0x00 0x0 0x00 [IronAxe] AttackInRangeAI 
-UNIT 0x80 Fighter 0x00 Level(2, Enemy, 1) [11,9] 0x00 0x00 0x0 0x00 [IronAxe] AttackInRangeAI 
-UNIT 0x80 Fighter 0x00 Level(2, Enemy, 1) [10,6] 0x00 0x00 0x0 0x00 [IronAxe] AttackInRangeAI
-UNIT 0x80 Fighter 0x00 Level(2, Enemy, 1) [9,3] 0x00 0x00 0x0 0x00 [IronAxe] AttackInRangeAI
-UNIT 0x80 Fighter 0x00 Level(2, Enemy, 1) [14,4] 0x00 0x00 0x0 0x00 [IronAxe] AttackInRangeAI
+UNIT 0x80 Soldier 0x00 Level(1, Enemy, 1) [6,17] 0x00 0x00 0x0 0x00 [IronLance] MoveToAttackAI
+UNIT 0x80 Shaman 0x00 Level(1, Enemy, 1) [10,12] 0x00 0x00 0x0 0x00 [Flux] MoveToAttackAI
+UNIT 0x80 AxeKnight 0x00 Level(1, Enemy, 1) [13,14] 0x00 0x00 0x0 0x00 [HandAxe] ScrubBossAI 
+UNIT 0x80 LanceKnight 0x00 Level(1, Enemy, 1) [13,13] DropItem 0x00 0x0 0x00 [Javelin,RedGem] ScrubBossAI 
+UNIT 0x80 Fighter 0x00 Level(1, Enemy, 1) [6,13] DropItem 0x00 0x0 0x00 [IronAxe] MoveToAttackAI
+UNIT 0x80 SwordMercenary 0x00 Level(2, Enemy, 1) [2,9] 0x00 0x00 0x0 0x00 [IronSword,RedGem] MoveToAttackAI
+UNIT 0x80 Soldier 0x00 Level(1, Enemy, 1) [12,9] DropItem 0x00 0x0 0x00 [IronLance] WaitToAttackAI
+UNIT 0x80 PirateF 0x00 Level(1, Enemy, 1) [9,8] 0x00 0x00 0x0 0x00 [IronAxe] WaitOneTurnMoveAI
+UNIT 0x80 Archer 0x00 Level(2, Enemy, 1) [6,6] 0x00 0x00 0x0 0x00 [IronBow] WaitToAttackAI
+UNIT 0x80 SwordMercenary 0x00 Level(1, Enemy, 1) [16,7] 0x00 0x00 0x0 0x00 [IronSword] WaitToAttackAI
+UNIT 0x80 Shaman 0x00 Level(1, Enemy, 1) [10,6] 0x00 0x00 0x0 0x00 [Flux,Vulnerary] WaitOneTurnMoveAI
+UNIT 0x80 Fighter 0x00 Level(1, Enemy, 1) [3,5] 0x00 0x00 0x0 0x00 [IronAxe] WaitToAttackAI 
+UNIT 0x80 Pirate 0x00 Level(1, Enemy, 1) [16,12] 0x00 0x00 0x0 0x00 [IronAxe] DestroyVillagesAI
+UNIT 0x80 PegasusKnight 0x00 Level(1, Enemy, 1) [13,4] 0x00 0x00 0x0 0x00 [IronLance] WaitToAttackAI
+UNIT 0x80 Myrmidon 0x00 Level(2, Enemy, 1) [9,3] 0x00 0x00 0x0 0x00 [IronSword] WaitToAttackAI
+UNIT 0x80 SwordMercenary 0x00 Level(3, Enemy, 1) [6,2] 0x00 0x00 0x0 0x00 [Armorslayer,Vulnerary] WaitToAttackAI
+UNIT 0x80 Archer 0x00 Level(2, Enemy, 1) [11,2] 0x00 0x00 0x0 0x00 [IronBow] AttackInTwoAI
+UNIT 0x80 Pirate 0x00 Level(1, Enemy, 1) [15,1] 0x00 0x00 0x0 0x00 [HandAxe,Vulnerary] ScrubBossAI
 UNIT 
 
 BeginningScene:
@@ -108,4 +98,43 @@ MNC2 0x1
 ENDA
 
 
-MESSAGE Events end at offset CURRENTOFFSET
+// Event Labels
+// Visiting
+UpperLeftVillage:
+MUSI
+VillageEventItem(Placeholder, HouseBG, Rescue)
+MUNO
+NoFade
+ENDA
+
+UpperLeftHouse:
+MUSI
+SetBackground(HouseBG)
+Text(Placeholder)
+EndConvo
+TILECHANGE 0x1
+MUNO
+NoFade
+ENDA
+
+// Thief
+SpawnThief:
+CamON
+LOAD1 0x1 ThiefLoader
+ENUN
+STAL 0x30
+CamOFF
+NoFade
+ENDA
+
+ThiefLoader:
+UNIT 0x80 Thief 0x00 Level(1, Enemy, 1) [17,14] DropItem 0x00 0x0 0x00 [IronSword,ChestKey] ThiefTreasureAI
+UNIT
+
+// Escape points
+EscapePointPointerTable(0x7,Ch1EscapePoints)
+Ch1EscapePoints:
+EscapePoint(17,14,MoveUp)
+EscapePointEnd
+
+

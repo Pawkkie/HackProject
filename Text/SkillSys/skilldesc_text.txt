@@ -254,7 +254,7 @@ Spur Defense: Adjacent allies[N]
 take -4 physical damage.[X]
 
 ## SD_SpurRes
-Spur Resistance: Adjacent allies[N]
+^{Spur Resistance}: Adjacent allies[N]
 take -4 magical damage.[X]
 
 ## SD_Nihil
@@ -460,7 +460,7 @@ Wind Disciple: +10 Hit and[N]
 Avoid when HP is not at max.[X]
 
 ## SD_StrongRiposte
-Strong Riposte: When under[N]
+^{Strong Riposte}: When under[N]
 attack, damage +3. [X]
 
 ## SD_Patience
