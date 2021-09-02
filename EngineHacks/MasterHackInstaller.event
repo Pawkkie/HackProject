@@ -37,3 +37,4 @@
 #include "PreventTrade/Installer.event"
 #include "Show Heal Amount/FE7 & FE8-Show Heal Amount EA.txt"
 #include "RNGRandomizer/RNGRandomizerInstaller.event"
+#include "SetUnitStatus/SetStatusInstaller.event"

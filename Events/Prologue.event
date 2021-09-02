@@ -32,10 +32,14 @@ END_MAIN
 
 
 MiscBasedEvents:
-// AFEV 0xB VillageDestroyed 0xA
+AREA 0xB ChangeThiefAI [16,6] [16,6]
 CauseGameOverIfLordDies //set flag 101/0x65 for other game overs
 DefeatAll(EndingScene)
 END_MAIN
+
+ChangeThiefAI:
+SetUnitStatusAll(0x80, AI2, 0x0C, AnyDeployed, EnemyArmy, 0x0D, AnyRange, AnyItem)
+ENDA
 
 Dunno:
 WORD $00

@@ -160,6 +160,7 @@ Extend item icon list - aera
 Mag/3 - Pikmin
 Equippable Accessories - Kirb, Vesly
 PreventTrade - Circles, Vesly
+SetUnitStatus - 7743, Vesly
 
 Open Source:
 - Clendo
