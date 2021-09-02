@@ -161,6 +161,7 @@ Mag/3 - Pikmin
 Equippable Accessories - Kirb, Vesly
 PreventTrade - Circles, Vesly
 SetUnitStatus - 7743, Vesly
+NewCHAI - Tequila
 
 Open Source:
 - Clendo

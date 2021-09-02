@@ -38,7 +38,7 @@ DefeatAll(EndingScene)
 END_MAIN
 
 ChangeThiefAI:
-SetUnitStatusAll(0x80, AI2, 0x0C, AnyDeployed, EnemyArmy, 0x0D, AnyRange, AnyItem)
+SetAI(16,6,0x06, 0x0C)
 ENDA
 
 Dunno:
