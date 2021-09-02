@@ -38,6 +38,8 @@ DefeatAll(EndingScene)
 END_MAIN
 
 ChangeThiefAI:
+CHECK_COORDS (-1) 
+SADD rB rC r0 
 SetAI(16,6,0x06, 0x0C)
 ENDA
 
@@ -116,7 +118,7 @@ MUSI
 SetBackground(HouseBG)
 Text(Placeholder)
 EndConvo
-TILECHANGE 0x1
+TILECHANGE 0x0
 MUNO
 NoFade
 ENDA
