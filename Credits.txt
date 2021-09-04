@@ -23,6 +23,7 @@ Nora - flasuban, mk404, nickt
 Ursula - CapibaraInSpace
 Rainer - Astelaine
 Kilvonso - hypergammaspaces
+Evans - Skeever
 
 Other:
 statscreen - SaXoR
@@ -30,6 +31,7 @@ statscreen - SaXoR
 Items:
 Dealbreaker - Beannmond
 BagOfHolding - Cardcafe
+ThievesCloak - Indogutsu Tenbuki, Eldritch Abomination
 
 Battle Anims:
 Assassin - Glenwing, Andy, SD9K
@@ -162,6 +164,7 @@ Equippable Accessories - Kirb, Vesly
 PreventTrade - Circles, Vesly
 SetUnitStatus - 7743, Vesly
 NewCHAI - Tequila
+UNCR - Vesly, Tequila
 
 Open Source:
 - Clendo

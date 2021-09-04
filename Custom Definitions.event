@@ -23,17 +23,23 @@
 #define Ursula 0x6
 #define Kilvonso 0x7
 #define Rayleigh 0x8
+#define Frida 0x9
+
+// Boss definitions
+#define Evans 0x35
 
 // Item definitions
 #define Dealbreaker 0xBD
 #define SpiritDust 0xBE
 #define BagOfHolding 0xBF
 #define WoodenShield 0xC0
+#define ThievesCloak 0xC1
 
 // Icon definitions
 #define DealbreakerIcon 0xE0
 #define SpiritDustIcon 0xE1
 #define BagOfHoldingIcon 0xE2
+#define ThievesCloakIcon 0xE3
 
 // Class definitions
 #define Nomad 0x80

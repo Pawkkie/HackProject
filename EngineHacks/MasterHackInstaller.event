@@ -39,3 +39,6 @@
 #include "RNGRandomizer/RNGRandomizerInstaller.event"
 #include "SetUnitStatus/SetStatusInstaller.event"
 #include "NewCHAI/FE8-New_CHAI_EA.event"
+#include "UNCMv2/UNCMv2Installer.event"
+#include "PAWKKIE/TextFix.txt"
+#include "SkipDifficultySelect.txt"

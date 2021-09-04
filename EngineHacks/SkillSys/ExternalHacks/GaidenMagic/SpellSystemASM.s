@@ -26,10 +26,12 @@ mov r6, r8
 push { r6, r7 }
 mov r5, r0
 mov r3, r1
-@mov r0, #0x1
-@neg r0, r0
-@cmp r3, r0
-@bne EnemyExists
+
+mov r0, #0x1@
+neg r0, r0@
+cmp r3, r0@
+bne EnemyExists@
+
 	CheckWeaponSlot:
 	mov r0, r5
 	blh GetUnitEquippedWeaponSlot, r1
@@ -59,7 +61,7 @@ bhi NoWeapon
 NoWeapon:
 	@ This was a jump to FinalCase, but it seems the exact same as vanilla (with the exception of mov r0, #0xFF and mov r0, #0xFE, but that could be a typo?
 	@ We're just gonna jump to vanilla.
-	ldr r0, =#0x802A831
+	ldr r0, =0x802A831
 	bx r0
 
 .ltorg
@@ -97,7 +99,7 @@ mov r0, r9
 strb r1, [ r0 ] @ Set CanCounter.
 mov r8, r4
 mov r4, r2
-ldr r1, =#0x802A84B
+ldr r1, =0x802A84B
 bx r1
 .ltorg
 
@@ -127,7 +129,7 @@ ActionFixUsingSpell:
 	ldr r0, =SelectedSpell
 	ldrb r0, [ r0 ]
 EndActionFix:
-ldr r1, =#0x0802FC63
+ldr r1, =0x0802FC63
 bx r1
 .ltorg
 .global GaidenPreActionHack
@@ -149,7 +151,7 @@ PreActionFixUsingSpell:
 	ldr r2, =SelectedSpell
 	ldrb r2, [ r2 ]
 EndPreActionFix:
-ldr r0, =#0x0801D1E1
+ldr r0, =0x0801D1E1
 bx r0
 .ltorg
 .global GaidenSetupBattleUnitForStaffHack
@@ -209,7 +211,7 @@ SetupBattleUnitForStaffUsingSpell:
 	mov r0, #0x13
 	lsl r0, r0, #0x08
 	orr r3, r0, r3
-	ldr r0, =#0xFFF80000
+	ldr r0, =0xFFF80000
 	and r0, r0, r2
 	orr r0, r0, r3
 	str r0, [ r1 ]*/
@@ -218,7 +220,7 @@ SetupBattleUnitForStaffUsingSpell:
 	ldr r1, [ r1 ] @ Current round.
 	bl SetRoundForSpell
 EndSetupBattleUnitForStaffFix:
-ldr r0, =#0x0802CB4B
+ldr r0, =0x0802CB4B
 bx r0
 .ltorg
 
@@ -244,7 +246,7 @@ ExecStandardHealUsingSpell:
 ldr r1, =SelectedSpell
 ldrb r1, [ r1 ]
 EndExecStandardHeal:
-ldr r0, =#0x0802EBCD
+ldr r0, =0x0802EBCD
 bx r0
 .ltorg
 
@@ -267,7 +269,7 @@ ExecFortifyUsingSpell:
 ldr r1, =SelectedSpell
 ldrb r1, [ r1 ]
 EndExecFortify:
-ldr r0, =#0x0802F195
+ldr r0, =0x0802F195
 bx r0
 .ltorg
 
@@ -293,10 +295,10 @@ bne SkipStaffInventory
 		strb r0, [ r1 ]
 		ldrh r0, [ r5 ]
 	StaffInventoryDecItem:
-	ldr r1, =#0x0802CC9B
+	ldr r1, =0x0802CC9B
 	bx r1
 SkipStaffInventory:
-ldr r0, =#0x0802CCB3
+ldr r0, =0x0802CCB3
 bx r0
 .ltorg
 .global GaidenTargetSelectionBPressHack
@@ -353,7 +355,7 @@ SpellMenuCostUsingSpell:
 	mov r3, r5
 EndSpellMenuCost:
 mov r5, #0x02
-ldr r0, =#0x080168B1
+ldr r0, =0x080168B1
 bx r0*/
 mov r1, r0
 mov r0, r5
@@ -380,7 +382,7 @@ beq MenuSpellCostHackJumpRightBack
 		mov r5, #0x02
 	MenuSpellCostHackDontChangeColor:
 	mov r1, r5
-	ldr r3, =#0x080168B5
+	ldr r3, =0x080168B5
 	bx r3
 MenuSpellCostHackJumpRightBack:
 ldr r0, =0x08016895

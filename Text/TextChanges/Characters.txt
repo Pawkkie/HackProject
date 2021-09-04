@@ -47,3 +47,15 @@ Rayleigh[X]
 
 ## RayleighDesc
 Rayleigh Desc[X]
+
+## FridaName
+Frida[X]
+
+## FridaDesc
+Frida Desc[X]
+
+## EvansName
+Evans[X]
+
+## EvansDesc
+Evans Desc[X]

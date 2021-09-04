@@ -33,3 +33,14 @@ wood. Gives +1 Def.[X]
 
 ## WoodenShieldUseScreen
 Grants +1 Def.[X]
+
+## ThievesCloakName ^
+Thieves' Cloak[X]
+
+## ThievesCloakDesc
+Shadowy cowl for sneaking.[NL]
+Less likely to be attacked.[X]
+
+## ThievesCloakUseScreen
+User less likely to be[NL]
+attacked.[X]

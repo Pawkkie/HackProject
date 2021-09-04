@@ -1,6 +1,5 @@
 #ifdef _FE8_
 
-	// PROTECT $E1908
 
 	#include "EAstdlib.event"
 	#include "Custom Definitions.event"

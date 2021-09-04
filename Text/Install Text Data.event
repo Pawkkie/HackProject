@@ -206,68 +206,96 @@ __TEXTPROCESSEC3:
 setText($EC3, __TEXTPROCESSEC3)
 
 __TEXTPROCESSEC4:
-#incext ParseFile ".TextEntries\TextBuildfileBWLRText.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileFridaName.fetxt"
 setText($EC4, __TEXTPROCESSEC4)
 
 __TEXTPROCESSEC5:
-#incext ParseFile ".TextEntries\TextBuildfilePlaceholder.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileFridaDesc.fetxt"
 setText($EC5, __TEXTPROCESSEC5)
 
 __TEXTPROCESSEC6:
-#incext ParseFile ".TextEntries\TextBuildfileUnequipText.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileEvansName.fetxt"
 setText($EC6, __TEXTPROCESSEC6)
 
 __TEXTPROCESSEC7:
-#incext ParseFile ".TextEntries\TextBuildfileCannotEquipAccessoryTextID.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileEvansDesc.fetxt"
 setText($EC7, __TEXTPROCESSEC7)
 
 __TEXTPROCESSEC8:
-#incext ParseFile ".TextEntries\TextBuildfileShowHealArrow.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileBWLRText.fetxt"
 setText($EC8, __TEXTPROCESSEC8)
 
 __TEXTPROCESSEC9:
-#incext ParseFile ".TextEntries\TextBuildfileDealbreakerName.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfilePlaceholder.fetxt"
 setText($EC9, __TEXTPROCESSEC9)
 
 __TEXTPROCESSECA:
-#incext ParseFile ".TextEntries\TextBuildfileDealbreakerDesc.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileUnequipText.fetxt"
 setText($ECA, __TEXTPROCESSECA)
 
 __TEXTPROCESSECB:
-#incext ParseFile ".TextEntries\TextBuildfileSpiritDustName.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileCannotEquipAccessoryTextID.fetxt"
 setText($ECB, __TEXTPROCESSECB)
 
 __TEXTPROCESSECC:
-#incext ParseFile ".TextEntries\TextBuildfileSpiritDustDesc.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileShowHealArrow.fetxt"
 setText($ECC, __TEXTPROCESSECC)
 
 __TEXTPROCESSECD:
-#incext ParseFile ".TextEntries\TextBuildfileSpiritDustUseScreen.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileDealbreakerName.fetxt"
 setText($ECD, __TEXTPROCESSECD)
 
 __TEXTPROCESSECE:
-#incext ParseFile ".TextEntries\TextBuildfileBagOfHoldingName.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileDealbreakerDesc.fetxt"
 setText($ECE, __TEXTPROCESSECE)
 
 __TEXTPROCESSECF:
-#incext ParseFile ".TextEntries\TextBuildfileBagOfHoldingDesc.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileSpiritDustName.fetxt"
 setText($ECF, __TEXTPROCESSECF)
 
 __TEXTPROCESSED0:
-#incext ParseFile ".TextEntries\TextBuildfileBagOfHoldingUseScreen.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileSpiritDustDesc.fetxt"
 setText($ED0, __TEXTPROCESSED0)
 
 __TEXTPROCESSED1:
-#incext ParseFile ".TextEntries\TextBuildfileWoodenShieldName.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileSpiritDustUseScreen.fetxt"
 setText($ED1, __TEXTPROCESSED1)
 
 __TEXTPROCESSED2:
-#incext ParseFile ".TextEntries\TextBuildfileWoodenShieldDesc.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileBagOfHoldingName.fetxt"
 setText($ED2, __TEXTPROCESSED2)
 
 __TEXTPROCESSED3:
-#incext ParseFile ".TextEntries\TextBuildfileWoodenShieldUseScreen.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileBagOfHoldingDesc.fetxt"
 setText($ED3, __TEXTPROCESSED3)
+
+__TEXTPROCESSED4:
+#incext ParseFile ".TextEntries\TextBuildfileBagOfHoldingUseScreen.fetxt"
+setText($ED4, __TEXTPROCESSED4)
+
+__TEXTPROCESSED5:
+#incext ParseFile ".TextEntries\TextBuildfileWoodenShieldName.fetxt"
+setText($ED5, __TEXTPROCESSED5)
+
+__TEXTPROCESSED6:
+#incext ParseFile ".TextEntries\TextBuildfileWoodenShieldDesc.fetxt"
+setText($ED6, __TEXTPROCESSED6)
+
+__TEXTPROCESSED7:
+#incext ParseFile ".TextEntries\TextBuildfileWoodenShieldUseScreen.fetxt"
+setText($ED7, __TEXTPROCESSED7)
+
+__TEXTPROCESSED8:
+#incext ParseFile ".TextEntries\TextBuildfileThievesCloakName.fetxt"
+setText($ED8, __TEXTPROCESSED8)
+
+__TEXTPROCESSED9:
+#incext ParseFile ".TextEntries\TextBuildfileThievesCloakDesc.fetxt"
+setText($ED9, __TEXTPROCESSED9)
+
+__TEXTPROCESSEDA:
+#incext ParseFile ".TextEntries\TextBuildfileThievesCloakUseScreen.fetxt"
+setText($EDA, __TEXTPROCESSEDA)
 
 __TEXTPROCESSD63:
 #incext ParseFile ".TextEntries\TextBuildfileExplorer.fetxt"
