@@ -1,3 +1,17 @@
 ## Ch1Village
 [OpenRight][LoadCurrent]
-Thanks, Atey![A][X]
+Village placeholder![A][X]
+
+## FridaRecruit
+[OpenRight][LoadFrida]
+Frida recruitment![A][X]
+
+## SackVillage
+[OpenRight][LoadEvans]
+Sack villages![NL]
+Loot chests![A][X]
+
+## BossReinforcements
+[OpenRight][LoadEvans]
+Boss reinforcements[NL]
+warning![A][X]

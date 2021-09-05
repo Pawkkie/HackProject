@@ -20,11 +20,13 @@ TurnBasedEvents:
 TurnEventPlayer(0x00,AttackVillage,3)
 TurnEventPlayer(0x00,SpawnThief,3)
 TurnEventPlayer(0x00,SpawnFrida,4)
+TurnEventPlayer(0x00,SpawnBossHelp,8)
 END_MAIN
 
 // Pirate attack village AI change
 AttackVillage:
-Text(Placeholder)
+Text(SackVillage)
+EndConvo
 SetAI(16,12,0x06, 0x04) // second one was 0x03
 NoFade
 ENDA
@@ -49,7 +51,8 @@ SpawnFrida:
 CamON
 LOAD1 0x1 FridaLoader
 ENUN
-Text(Placeholder)
+Text(FridaRecruit)
+EndConvo
 CamOFF
 NoFade
 ENDA
@@ -57,6 +60,25 @@ ENDA
 // Frida loader
 FridaLoader:
 UNIT Frida PegasusKnight Eirika Level(1,Ally,False) [19,12] 0x0 0x0 0x0 0x1 [SlimLance,Javelin,Vulnerary] NoAI
+UNIT
+
+// Spawn Boss Help
+SpawnBossHelp:
+CamON
+LOAD1 0x1 BossHelpLoader
+ENUN
+Text(BossReinforcements)
+EndConvo
+CamOFF
+NoFade
+ENDA
+
+// Boss help loader
+BossHelpLoader:
+UNIT 0x80 Myrmidon 0x00 Level(1, Enemy, 1) [15,3] 0x00 0x00 0x0 0x00 [IronSword] MoveToAttackAI
+UNIT 0x80 Fighter 0x00 Level(1, Enemy, 1) [12,1] 0x00 0x00 0x0 0x00 [IronAxe] MoveToAttackAI
+UNIT 0x80 Soldier 0x00 Level(1, Enemy, 1) [16,2] 0x00 0x00 0x0 0x00 [IronLance] MoveToAttackAI
+UNIT 0x80 Shaman 0x00 Level(1, Enemy, 1) [13,0] 0x00 0x00 0x0 0x00 [Flux] MoveToAttackAI
 UNIT
 
 
@@ -94,9 +116,8 @@ ENDA
 
 MiscBasedEvents:
 AREA 0xB ChangeThiefAI [16,6] [16,6]
-AREA 0xC GiveVendorItem [17,10] [17,10]
 CauseGameOverIfLordDies //set flag 101/0x65 for other game overs
-DefeatAll(EndingScene)
+DefeatBoss(EndingScene)
 END_MAIN
 
 ChangeThiefAI:
@@ -104,12 +125,6 @@ ChangeThiefAI:
 // SADD rB rC r0 
 UNCR((-1),1)
 SetAI(16,6,0x00, 0x0C) // first one was 0x06
-NoFade
-ENDA
-
-GiveVendorItem:
-Text(Placeholder)
-GiveItem(WoodenShield,(-1))
 NoFade
 ENDA
 
@@ -133,7 +148,7 @@ UNIT Ruby LanceKnight Eirika Level(1,Ally,False) [2,12] 0x0 0x0 0x0 0x1 [IronLan
 UNIT Ella ThiefF Eirika Level(3,Ally,False) [1,12] 0x0 0x0 0x0 0x1 [IronSword,ThievesCloak,Lockpick] NoAI
 UNIT Ursula Cleric Eirika Level(1,Ally,False) [2,13] 0x0 0x0 0x0 0x1 [Heal,Vulnerary] NoAI
 UNIT Rayleigh Archer Eirika Level(1,Ally,False) [3,12] 0x0 0x0 0x0 0x1 [IronBow] NoAI
-UNIT Kilvonso Monk Eirika Level(1,Ally,False) [3,14] 0x0 0x0 0x0 0x1 [Lightning] NoAI
+UNIT Kilvonso Monk Eirika Level(1,Ally,False) [3,14] 0x0 0x0 0x0 0x1 [Lightning,Vulnerary] NoAI
 UNIT
 
 EnemyUnits:
@@ -154,7 +169,7 @@ UNIT 0x80 Myrmidon 0x00 Level(2, Enemy, 1) [9,3] 0x00 0x00 0x0 0x00 [IronSword] 
 UNIT 0x80 SwordMercenary 0x00 Level(3, Enemy, 1) [6,2] 0x00 0x00 0x0 0x00 [SteelSword,Vulnerary] WaitToAttackAI
 UNIT 0x80 Archer 0x00 Level(2, Enemy, 1) [11,1] 0x00 0x00 0x0 0x00 [IronBow] AttackInTwoAI
 UNIT Evans Pirate 0x00 Level(5, Enemy, 1) [15,1] 0x00 0x00 0x0 0x00 [Hammer,Swordreaver,SecretBook] AccurateBossAI
-UNIT Evans Pirate 0x00 Level(5, Enemy, 1) [15,1] 0x00 0x00 0x0 0x00 [Swordreaver,Hammer,SecretBook] AccurateBossAI
+UNIT Evans Pirate 0x00 Level(5, Enemy, 1) [15,1] 0x00 0x00 0x0 0x00 [Swordreaver,Hammer,HandAxe,SecretBook] AccurateBossAI
 UNIT 
 
 // Escape points

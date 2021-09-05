@@ -142,160 +142,172 @@ __TEXTPROCESSEB3:
 setText($EB3, __TEXTPROCESSEB3)
 
 __TEXTPROCESSEB4:
-#incext ParseFile ".TextEntries\TextBuildfileRubyName.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileFridaRecruit.fetxt"
 setText($EB4, __TEXTPROCESSEB4)
 
 __TEXTPROCESSEB5:
-#incext ParseFile ".TextEntries\TextBuildfileRubyDesc.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileSackVillage.fetxt"
 setText($EB5, __TEXTPROCESSEB5)
 
 __TEXTPROCESSEB6:
-#incext ParseFile ".TextEntries\TextBuildfileArlaName.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileBossReinforcements.fetxt"
 setText($EB6, __TEXTPROCESSEB6)
 
 __TEXTPROCESSEB7:
-#incext ParseFile ".TextEntries\TextBuildfileArlaDesc.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileRubyName.fetxt"
 setText($EB7, __TEXTPROCESSEB7)
 
 __TEXTPROCESSEB8:
-#incext ParseFile ".TextEntries\TextBuildfileRomiName.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileRubyDesc.fetxt"
 setText($EB8, __TEXTPROCESSEB8)
 
 __TEXTPROCESSEB9:
-#incext ParseFile ".TextEntries\TextBuildfileRomiDesc.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileArlaName.fetxt"
 setText($EB9, __TEXTPROCESSEB9)
 
 __TEXTPROCESSEBA:
-#incext ParseFile ".TextEntries\TextBuildfileEllaName.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileArlaDesc.fetxt"
 setText($EBA, __TEXTPROCESSEBA)
 
 __TEXTPROCESSEBB:
-#incext ParseFile ".TextEntries\TextBuildfileEllaDesc.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileRomiName.fetxt"
 setText($EBB, __TEXTPROCESSEBB)
 
 __TEXTPROCESSEBC:
-#incext ParseFile ".TextEntries\TextBuildfileUrsulaName.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileRomiDesc.fetxt"
 setText($EBC, __TEXTPROCESSEBC)
 
 __TEXTPROCESSEBD:
-#incext ParseFile ".TextEntries\TextBuildfileUrsulaDesc.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileEllaName.fetxt"
 setText($EBD, __TEXTPROCESSEBD)
 
 __TEXTPROCESSEBE:
-#incext ParseFile ".TextEntries\TextBuildfileRainerName.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileEllaDesc.fetxt"
 setText($EBE, __TEXTPROCESSEBE)
 
 __TEXTPROCESSEBF:
-#incext ParseFile ".TextEntries\TextBuildfileRainerDesc.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileUrsulaName.fetxt"
 setText($EBF, __TEXTPROCESSEBF)
 
 __TEXTPROCESSEC0:
-#incext ParseFile ".TextEntries\TextBuildfileKilvonsoName.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileUrsulaDesc.fetxt"
 setText($EC0, __TEXTPROCESSEC0)
 
 __TEXTPROCESSEC1:
-#incext ParseFile ".TextEntries\TextBuildfileKilvonsoDesc.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileRainerName.fetxt"
 setText($EC1, __TEXTPROCESSEC1)
 
 __TEXTPROCESSEC2:
-#incext ParseFile ".TextEntries\TextBuildfileRayleighName.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileRainerDesc.fetxt"
 setText($EC2, __TEXTPROCESSEC2)
 
 __TEXTPROCESSEC3:
-#incext ParseFile ".TextEntries\TextBuildfileRayleighDesc.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileKilvonsoName.fetxt"
 setText($EC3, __TEXTPROCESSEC3)
 
 __TEXTPROCESSEC4:
-#incext ParseFile ".TextEntries\TextBuildfileFridaName.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileKilvonsoDesc.fetxt"
 setText($EC4, __TEXTPROCESSEC4)
 
 __TEXTPROCESSEC5:
-#incext ParseFile ".TextEntries\TextBuildfileFridaDesc.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileRayleighName.fetxt"
 setText($EC5, __TEXTPROCESSEC5)
 
 __TEXTPROCESSEC6:
-#incext ParseFile ".TextEntries\TextBuildfileEvansName.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileRayleighDesc.fetxt"
 setText($EC6, __TEXTPROCESSEC6)
 
 __TEXTPROCESSEC7:
-#incext ParseFile ".TextEntries\TextBuildfileEvansDesc.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileFridaName.fetxt"
 setText($EC7, __TEXTPROCESSEC7)
 
 __TEXTPROCESSEC8:
-#incext ParseFile ".TextEntries\TextBuildfileBWLRText.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileFridaDesc.fetxt"
 setText($EC8, __TEXTPROCESSEC8)
 
 __TEXTPROCESSEC9:
-#incext ParseFile ".TextEntries\TextBuildfilePlaceholder.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileEvansName.fetxt"
 setText($EC9, __TEXTPROCESSEC9)
 
 __TEXTPROCESSECA:
-#incext ParseFile ".TextEntries\TextBuildfileUnequipText.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileEvansDesc.fetxt"
 setText($ECA, __TEXTPROCESSECA)
 
 __TEXTPROCESSECB:
-#incext ParseFile ".TextEntries\TextBuildfileCannotEquipAccessoryTextID.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileBWLRText.fetxt"
 setText($ECB, __TEXTPROCESSECB)
 
 __TEXTPROCESSECC:
-#incext ParseFile ".TextEntries\TextBuildfileShowHealArrow.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfilePlaceholder.fetxt"
 setText($ECC, __TEXTPROCESSECC)
 
 __TEXTPROCESSECD:
-#incext ParseFile ".TextEntries\TextBuildfileDealbreakerName.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileUnequipText.fetxt"
 setText($ECD, __TEXTPROCESSECD)
 
 __TEXTPROCESSECE:
-#incext ParseFile ".TextEntries\TextBuildfileDealbreakerDesc.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileCannotEquipAccessoryTextID.fetxt"
 setText($ECE, __TEXTPROCESSECE)
 
 __TEXTPROCESSECF:
-#incext ParseFile ".TextEntries\TextBuildfileSpiritDustName.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileShowHealArrow.fetxt"
 setText($ECF, __TEXTPROCESSECF)
 
 __TEXTPROCESSED0:
-#incext ParseFile ".TextEntries\TextBuildfileSpiritDustDesc.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileDealbreakerName.fetxt"
 setText($ED0, __TEXTPROCESSED0)
 
 __TEXTPROCESSED1:
-#incext ParseFile ".TextEntries\TextBuildfileSpiritDustUseScreen.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileDealbreakerDesc.fetxt"
 setText($ED1, __TEXTPROCESSED1)
 
 __TEXTPROCESSED2:
-#incext ParseFile ".TextEntries\TextBuildfileBagOfHoldingName.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileSpiritDustName.fetxt"
 setText($ED2, __TEXTPROCESSED2)
 
 __TEXTPROCESSED3:
-#incext ParseFile ".TextEntries\TextBuildfileBagOfHoldingDesc.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileSpiritDustDesc.fetxt"
 setText($ED3, __TEXTPROCESSED3)
 
 __TEXTPROCESSED4:
-#incext ParseFile ".TextEntries\TextBuildfileBagOfHoldingUseScreen.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileSpiritDustUseScreen.fetxt"
 setText($ED4, __TEXTPROCESSED4)
 
 __TEXTPROCESSED5:
-#incext ParseFile ".TextEntries\TextBuildfileWoodenShieldName.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileBagOfHoldingName.fetxt"
 setText($ED5, __TEXTPROCESSED5)
 
 __TEXTPROCESSED6:
-#incext ParseFile ".TextEntries\TextBuildfileWoodenShieldDesc.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileBagOfHoldingDesc.fetxt"
 setText($ED6, __TEXTPROCESSED6)
 
 __TEXTPROCESSED7:
-#incext ParseFile ".TextEntries\TextBuildfileWoodenShieldUseScreen.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileBagOfHoldingUseScreen.fetxt"
 setText($ED7, __TEXTPROCESSED7)
 
 __TEXTPROCESSED8:
-#incext ParseFile ".TextEntries\TextBuildfileThievesCloakName.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileWoodenShieldName.fetxt"
 setText($ED8, __TEXTPROCESSED8)
 
 __TEXTPROCESSED9:
-#incext ParseFile ".TextEntries\TextBuildfileThievesCloakDesc.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileWoodenShieldDesc.fetxt"
 setText($ED9, __TEXTPROCESSED9)
 
 __TEXTPROCESSEDA:
-#incext ParseFile ".TextEntries\TextBuildfileThievesCloakUseScreen.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileWoodenShieldUseScreen.fetxt"
 setText($EDA, __TEXTPROCESSEDA)
+
+__TEXTPROCESSEDB:
+#incext ParseFile ".TextEntries\TextBuildfileThievesCloakName.fetxt"
+setText($EDB, __TEXTPROCESSEDB)
+
+__TEXTPROCESSEDC:
+#incext ParseFile ".TextEntries\TextBuildfileThievesCloakDesc.fetxt"
+setText($EDC, __TEXTPROCESSEDC)
+
+__TEXTPROCESSEDD:
+#incext ParseFile ".TextEntries\TextBuildfileThievesCloakUseScreen.fetxt"
+setText($EDD, __TEXTPROCESSEDD)
 
 __TEXTPROCESSD63:
 #incext ParseFile ".TextEntries\TextBuildfileExplorer.fetxt"
