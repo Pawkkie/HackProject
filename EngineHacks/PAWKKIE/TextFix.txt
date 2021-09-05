@@ -1,7 +1,0 @@
-PUSH
-
-ORG $2A744
-SHORT $46C0
-
-POP
-
