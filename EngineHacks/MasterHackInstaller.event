@@ -41,3 +41,5 @@
 #include "NewCHAI/FE8-New_CHAI_EA.event"
 #include "UNCMv2/UNCMv2Installer.event"
 #include "SkipDifficultySelect.txt"
+#include "MoreShops/MoreShops.event"
+//#include "MoreShopMusic/MoreShopMusic.event"

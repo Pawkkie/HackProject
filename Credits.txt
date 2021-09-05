@@ -165,6 +165,8 @@ PreventTrade - Circles, Vesly
 SetUnitStatus - 7743, Vesly
 NewCHAI - Tequila
 UNCR - Vesly, Tequila
+More Shops - Sme
+More Shop Music - Sme
 
 Open Source:
 - Clendo

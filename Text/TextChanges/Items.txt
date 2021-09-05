@@ -32,7 +32,7 @@ A smartly crafted plank of[NL]
 wood. Gives +1 Def.[X]
 
 ## WoodenShieldUseScreen
-Grants +1 Def.[X]
+Grants +2 Def.[X]
 
 ## ThievesCloakName ^
 Thieves' Cloak[X]

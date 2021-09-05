@@ -39,7 +39,8 @@
 #define DealbreakerIcon 0xE0
 #define SpiritDustIcon 0xE1
 #define BagOfHoldingIcon 0xE2
-#define ThievesCloakIcon 0xE3
+#define WoodenShieldIcon 0xE3
+#define	ThievesCloakIcon 0xE4
 
 // Class definitions
 #define Nomad 0x80
