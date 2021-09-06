@@ -1,3 +1,5 @@
+#include "REDAs.event"
+
 ALIGN 4
 {
   #include "Prologue.event"

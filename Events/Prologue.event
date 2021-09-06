@@ -62,20 +62,20 @@ UNIT
 
 // Spawn Boss Help
 SpawnBossHelp:
+Text(BossReinforcements)
 CamON
 LOAD1 0x1 BossHelpLoader
 ENUN
-Text(BossReinforcements)
 CamOFF
 NoFade
 ENDA
 
 // Boss help loader
 BossHelpLoader:
-UNIT 0x80 Myrmidon 0x00 Level(1, Enemy, 1) [15,3] 0x00 0x00 0x0 0x00 [IronSword] MoveToAttackAI // [15,3]
-UNIT 0x80 Fighter 0x00 Level(1, Enemy, 1) [12,1] 0x00 0x00 0x0 0x00 [IronAxe] MoveToAttackAI // [12,1]
-UNIT 0x80 Soldier 0x00 Level(1, Enemy, 1) [16,2] 0x00 0x00 0x0 0x00 [IronLance] MoveToAttackAI // [16,2]
-UNIT 0x80 Shaman 0x00 Level(1, Enemy, 1) [13,0] 0x00 0x00 0x0 0x00 [Flux] MoveToAttackAI // [13,0]
+UNIT 0x80 Myrmidon 0x00 Level(1, Enemy, 1) [15,1] 0x00 0x00 0x1 REDA15R3 [IronSword] MoveToAttackAI // [15,3]
+UNIT 0x80 Fighter 0x00 Level(1, Enemy, 1) [15,1] 0x00 0x00 0x1 REDA12R1 [IronAxe] MoveToAttackAI // [12,1]
+UNIT 0x80 Soldier 0x00 Level(1, Enemy, 1) [15,1] 0x00 0x00 0x1 REDA16R2 [IronLance] MoveToAttackAI // [16,2]
+UNIT 0x80 Shaman 0x00 Level(1, Enemy, 1) [15,1] 0x00 0x00 0x1 REDA13R0 [Flux] MoveToAttackAI // [13,0]
 UNIT
 
 
