@@ -44,3 +44,10 @@ Less likely to be attacked.[X]
 ## ThievesCloakUseScreen
 User less likely to be[NL]
 attacked.[X]
+
+## VulneraryDesc
+A medicinal solution for[NL]
+minor wounds. Heals 15 HP.[X]
+
+## VulneraryUseScreen
+Restores 15 HP.[X]

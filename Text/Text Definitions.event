@@ -79,7 +79,9 @@
 #define ThievesCloakName $EDB
 #define ThievesCloakDesc $EDC
 #define ThievesCloakUseScreen $EDD
-#define EllaRubyC $EDE
+#define VulneraryDesc $EDE
+#define VulneraryUseScreen $EDF
+#define EllaRubyC $EE0
 #define Explorer $D63
 #define NomadicTrooperDesc $319
 #define EnergyRingDesc $484

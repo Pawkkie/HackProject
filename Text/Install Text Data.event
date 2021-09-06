@@ -310,8 +310,16 @@ __TEXTPROCESSEDD:
 setText($EDD, __TEXTPROCESSEDD)
 
 __TEXTPROCESSEDE:
-#incext ParseFile ".TextEntries\TextBuildfileEllaRubyC.fetxt"
+#incext ParseFile ".TextEntries\TextBuildfileVulneraryDesc.fetxt"
 setText($EDE, __TEXTPROCESSEDE)
+
+__TEXTPROCESSEDF:
+#incext ParseFile ".TextEntries\TextBuildfileVulneraryUseScreen.fetxt"
+setText($EDF, __TEXTPROCESSEDF)
+
+__TEXTPROCESSEE0:
+#incext ParseFile ".TextEntries\TextBuildfileEllaRubyC.fetxt"
+setText($EE0, __TEXTPROCESSEE0)
 
 __TEXTPROCESSD63:
 #incext ParseFile ".TextEntries\TextBuildfileExplorer.fetxt"
