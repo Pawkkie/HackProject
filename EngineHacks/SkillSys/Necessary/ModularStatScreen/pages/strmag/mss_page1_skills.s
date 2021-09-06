@@ -28,15 +28,12 @@ IsPlayerUnit:
 str		r0,[sp,#0x14]
 
 draw_textID_at 13, 3, textID=0x4fe, growth_func=2 @str
-draw_textID_at 21, 3, textID=0x4ff, growth_func=3 @mag
-draw_textID_at 13, 5, textID=0x4EC, growth_func=4 @skl
-draw_textID_at 21, 5, textID=0x4ED, growth_func=5 @spd
-draw_textID_at 13, 9, textID=0x4ee, growth_func=6 @luck
-draw_textID_at 13, 7, textID=0x4ef, growth_func=7 @def
-draw_textID_at 21, 7, textID=0x4f0, growth_func=8 @res
-
-@draw_textID_at 13, 17, textID=0x4f1, colour=White @affin
-@draw_affinity_icon_at 16, 17
+draw_textID_at 13, 5, textID=0x4ff, growth_func=3 @mag
+draw_textID_at 13, 7, textID=0x4EC, growth_func=4 @skl
+draw_textID_at 13, 9, textID=0x4ED, growth_func=5 @spd
+draw_textID_at 13, 11, textID=0x4ee, growth_func=6 @luck
+draw_textID_at 13, 13, textID=0x4ef, growth_func=7 @def
+draw_textID_at 13, 15, textID=0x4f0, growth_func=8 @res
 
 b 	NoRescue
 .ltorg 
@@ -70,30 +67,26 @@ ldr		r0,[r0,#4]		@str growth getter
 draw_growth_at 18, 3
 ldr		r0,[sp,#0xC]
 ldr		r0,[r0,#8]		@mag growth getter
-draw_growth_at 26, 3
-ldr		r0,[sp,#0xC]
-ldr		r0,[r0,#12]		@skl growth getter
 draw_growth_at 18, 5
 ldr		r0,[sp,#0xC]
-ldr		r0,[r0,#16]		@spd growth getter
-draw_growth_at 26, 5
-ldr		r0,[sp,#0xC]
-ldr		r0,[r0,#20]		@luk growth getter
-draw_growth_at 18, 9
-ldr		r0,[sp,#0xC]
-ldr		r0,[r0,#24]		@def growth getter
+ldr		r0,[r0,#12]		@skl growth getter
 draw_growth_at 18, 7
 ldr		r0,[sp,#0xC]
+ldr		r0,[r0,#16]		@spd growth getter
+draw_growth_at 18, 9
+ldr		r0,[sp,#0xC]
+ldr		r0,[r0,#20]		@luk growth getter
+draw_growth_at 18, 11
+ldr		r0,[sp,#0xC]
+ldr		r0,[r0,#24]		@def growth getter
+draw_growth_at 18, 13
+ldr		r0,[sp,#0xC]
 ldr		r0,[r0,#28]		@res growth getter
-draw_growth_at 26, 7
+draw_growth_at 18, 15
 ldr		r0,[sp,#0xC]
 ldr		r0,[r0]			@hp growth getter (not displaying because there's no room atm)
-draw_growth_at 26, 9
-draw_textID_at 21, 13, 0x0001 @" "
-draw_textID_at 22, 13, 0x0001 @" "
-draw_textID_at 23, 13, 0x0001 @" "
-draw_textID_at 24, 13, 0x0001 @" "
-draw_textID_at 21, 9, textID=0x4E9, growth_func=1 @hp name
+draw_growth_at 18, 17
+draw_textID_at 13, 17, textID=0x4E9, growth_func=1 @hp name
 b		NextColumn
 .ltorg
 
@@ -102,20 +95,26 @@ b		ShowStats3
 
 NextColumn:
 
-draw_textID_at 13, 11, textID=0x4f7 @con
-draw_con_bar_with_getter_at 16, 11
+draw_textID_at 21, 3, 0x4f6 @move
+draw_move_bar_with_getter_at 24, 3
+
+draw_textID_at 21, 5, textID=0x4f7 @con
+draw_con_bar_with_getter_at 24, 5
 
 
-draw_textID_at 21, 11, textID=0x4f8 @aid
-draw_number_at 25, 11, 0x80189B8, 2 @aid getter
-draw_aid_icon_at 26, 11
+draw_textID_at 21, 7, textID=0x4f8 @aid
+draw_number_at 25, 7, 0x80189B8, 2 @aid getter
+draw_aid_icon_at 26, 7
 
-@draw_status_text_at 13, 13
-draw_trv_text_at 13, 13
+draw_status_text_at 21, 9
+draw_trv_text_at 21, 13
+draw_textID_at 21, 15, textID=0x4f1 @affin
+
+draw_affinity_icon_at 24, 15
 
 ldr r0,=TalkTextIDLink
 ldrh r0,[r0]
-draw_talk_text_at 21, 13
+draw_talk_text_at 21, 11
 
 Nexty:
 
@@ -123,16 +122,13 @@ b skipliterals
 .ltorg
 
 ShowStats3:
-draw_textID_at 21, 9, 0x4f6 @move
-draw_move_bar_with_getter_at 24, 9
 draw_str_bar_at 16, 3
-draw_mag_bar_at 24, 3
-draw_skl_bar_at 16, 5
-draw_spd_bar_at 24, 5
-draw_luck_bar_at 16, 9
-draw_def_bar_at 16, 7
-draw_res_bar_at 24, 7
-
+draw_mag_bar_at 16, 5
+draw_skl_bar_at 16, 7
+draw_spd_bar_at 16, 9
+draw_luck_bar_at 16, 11
+draw_def_bar_at 16, 13
+draw_res_bar_at 16, 15
 b		NextColumn
 .ltorg
 
@@ -141,7 +137,7 @@ skipliterals:
 @ draw_textID_at 13, 15, textID=0x4f6 @move
 @ draw_move_bar_at 16, 15
 
-blh DrawBWLNumbers
+@blh DrawBWLNumbers
 
 ldr		r0,=StatScreenStruct
 sub		r0,#0x2

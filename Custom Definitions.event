@@ -34,6 +34,7 @@
 #define BagOfHolding 0xBF
 #define WoodenShield 0xC0
 #define ThievesCloak 0xC1
+#define FilliShield 0x71
 
 // Icon definitions
 #define DealbreakerIcon 0xE0
