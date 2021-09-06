@@ -82,7 +82,7 @@ UNIT
 //// CHARACTER ////
 ALIGN 32 //For some reason, CharacterBasedEvents have to be 32-Aligned?
 CharacterBasedEvents:
-SupportConvo(CSupport,Ruby,Franz,Ch1Village)
+SupportConvo(CSupport,Ruby,Franz,EllaRubyC)
 END_MAIN
 
 //// LOCATION ////

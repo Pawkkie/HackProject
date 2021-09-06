@@ -6,6 +6,7 @@ StartHere[X]
 #include "TextChanges/Characters.txt"
 #include "TextChanges/Other.txt"
 #include "TextChanges/Items.txt"
+#include "TextChanges/Supports.txt"
 
 # 0xD63 Explorer
 Explorer: All traversable[NL]

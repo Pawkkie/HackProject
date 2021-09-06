@@ -309,6 +309,10 @@ __TEXTPROCESSEDD:
 #incext ParseFile ".TextEntries\TextBuildfileThievesCloakUseScreen.fetxt"
 setText($EDD, __TEXTPROCESSEDD)
 
+__TEXTPROCESSEDE:
+#incext ParseFile ".TextEntries\TextBuildfileEllaRubyC.fetxt"
+setText($EDE, __TEXTPROCESSEDE)
+
 __TEXTPROCESSD63:
 #incext ParseFile ".TextEntries\TextBuildfileExplorer.fetxt"
 setText($D63, __TEXTPROCESSD63)
